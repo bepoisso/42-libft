@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/19 00:51:28 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/19 01:19:30 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 int	main(void)
 {
-/* 	//_________ISAPLHA_________
+	/*
+	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
 
@@ -151,6 +152,7 @@ int	main(void)
 	//__________________
 
 	//_________ATOI_________
+	printf("\n_________ATOI_________\n");
 	int	expected_atoi;
 	int	got_atoi;
 	
@@ -207,7 +209,49 @@ int	main(void)
 	got_atoi = ft_atoi(str9_atoi);
 	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str9_atoi, expected_atoi, got_atoi);
-	//__________________*/
+	//__________________
+
+	//_________STRLCPY_________
+	printf("\n_________STRLCPY_________\n");
+	size_t	expected_strlcpy;
+	size_t	got_strlcpy;
+
+	char dst1_strlcpy[10];
+	char src1_strlcpy[] = "Hello";
+	expected_strlcpy = strlcpy(dst1_strlcpy, src1_strlcpy, sizeof(dst1_strlcpy));
+	got_strlcpy = ft_strlcpy(dst1_strlcpy, src1_strlcpy, sizeof(dst1_strlcpy));
+	printf(expected_strlcpy == got_strlcpy ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strlcpy(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src1_strlcpy, sizeof(dst1_strlcpy), expected_strlcpy, got_strlcpy, dst1_strlcpy);
+
+	char dst2_strlcpy[10];
+	char src2_strlcpy[] = "Hello, World!";
+	expected_strlcpy = strlcpy(dst2_strlcpy, src2_strlcpy, sizeof(dst2_strlcpy));
+	got_strlcpy = ft_strlcpy(dst2_strlcpy, src2_strlcpy, sizeof(dst2_strlcpy));
+	printf(expected_strlcpy == got_strlcpy ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strlcpy(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src2_strlcpy, sizeof(dst2_strlcpy), expected_strlcpy, got_strlcpy, dst2_strlcpy);
+
+	char dst3_strlcpy[5];
+	char src3_strlcpy[] = "abcd";
+	expected_strlcpy = strlcpy(dst3_strlcpy, src3_strlcpy, sizeof(dst3_strlcpy));
+	got_strlcpy = ft_strlcpy(dst3_strlcpy, src3_strlcpy, sizeof(dst3_strlcpy));
+	printf(expected_strlcpy == got_strlcpy ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strlcpy(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src3_strlcpy, sizeof(dst3_strlcpy), expected_strlcpy, got_strlcpy, dst3_strlcpy);
+
+	char dst4_strlcpy[1];
+	char src4_strlcpy[] = "Test";
+	expected_strlcpy = strlcpy(dst4_strlcpy, src4_strlcpy, sizeof(dst4_strlcpy));
+	got_strlcpy = ft_strlcpy(dst4_strlcpy, src4_strlcpy, sizeof(dst4_strlcpy));
+	printf(expected_strlcpy == got_strlcpy ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strlcpy(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src4_strlcpy, sizeof(dst4_strlcpy), expected_strlcpy, got_strlcpy, dst4_strlcpy);
+
+	char dst5_strlcpy[10];
+	char src5_strlcpy[] = "";
+	expected_strlcpy = strlcpy(dst5_strlcpy, src5_strlcpy, sizeof(dst5_strlcpy));
+	got_strlcpy = ft_strlcpy(dst5_strlcpy, src5_strlcpy, sizeof(dst5_strlcpy));
+	printf(expected_strlcpy == got_strlcpy ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strlcpy(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src5_strlcpy, sizeof(dst5_strlcpy), expected_strlcpy, got_strlcpy, dst5_strlcpy);
+	//__________________
+	*/
 }
 
 
