@@ -6,9 +6,11 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 00:29:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/19 00:39:55 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/19 00:55:01 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
