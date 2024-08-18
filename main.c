@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/18 22:14:25 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/19 00:51:28 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,9 +148,66 @@ int	main(void)
 	got_strlen = ft_strlen(str_strlen);
 	printf(expected_strlen == got_strlen ? "[PASS] " : "[FAIL] ");
 	printf("strlen | EXPECTED : %ld | GOT : %ld\n", expected_strlen, got_strlen);
-	//__________________ */
+	//__________________
 
+	//_________ATOI_________
+	int	expected_atoi;
+	int	got_atoi;
 	
+	char str_atoi[] = "42";
+	expected_atoi = atoi(str_atoi);
+	got_atoi = ft_atoi(str_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str_atoi, expected_atoi, got_atoi);
+
+	char str2_atoi[] = "-42";
+	expected_atoi = atoi(str2_atoi);
+	got_atoi = ft_atoi(str2_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str2_atoi, expected_atoi, got_atoi);
+
+	char str3_atoi[] = "    -101";
+	expected_atoi = atoi(str3_atoi);
+	got_atoi = ft_atoi(str3_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str3_atoi, expected_atoi, got_atoi);
+
+	char str4_atoi[] = " \t\n\r\v\f -2147483648";
+	expected_atoi = atoi(str4_atoi);
+	got_atoi = ft_atoi(str4_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi( \\t\\n\\r\\v\\f -2147483648) | Expected : %d | Got : %d\n", expected_atoi, got_atoi);
+
+	char str5_atoi[] = "  2147483647";
+	expected_atoi = atoi(str5_atoi);
+	got_atoi = ft_atoi(str5_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str5_atoi, expected_atoi, got_atoi);
+
+	char str6_atoi[] = " 42ABC";
+	expected_atoi = atoi(str6_atoi);
+	got_atoi = ft_atoi(str6_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str6_atoi, expected_atoi, got_atoi);
+
+	char str7_atoi[] = "";
+	expected_atoi = atoi(str7_atoi);
+	got_atoi = ft_atoi(str7_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str7_atoi, expected_atoi, got_atoi);
+
+	char str8_atoi[] = "  ABC-42";
+	expected_atoi = atoi(str8_atoi);
+	got_atoi = ft_atoi(str8_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str8_atoi, expected_atoi, got_atoi);
+
+	char str9_atoi[] = "  -ABC42";
+	expected_atoi = atoi(str9_atoi);
+	got_atoi = ft_atoi(str9_atoi);
+	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str9_atoi, expected_atoi, got_atoi);
+	//__________________*/
 }
 
 
