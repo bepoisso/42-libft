@@ -6,16 +6,18 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 17:58:58 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:17:47 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include <ctype.h>
 
-char *strnstr(const char *haystack, const char *needle, size_t len);
+char	*strnstr(const char *haystack, const char *needle, size_t len);
+void	print_memory(const void *ptr, size_t size);
 
 int	main(void)
 {
@@ -652,6 +654,66 @@ int	main(void)
 	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
 	//__________________
+
+		printf("\n_________BZERO_________\n");
+
+	int		result;
+	char	expected[10];
+	char	got[10];
+
+	char str1[10] = "Hello";
+	memcpy(expected, str1, sizeof(str1));
+	memcpy(got, str1, sizeof(str1));
+	bzero(expected + 2, 3);
+	ft_bzero(got + 2, 3);
+	result = memcmp(expected, got, sizeof(str1));
+	printf(result == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str1 + 2, 3) | Expected : ");
+	print_memory(expected, sizeof(expected));
+	printf(" | Got : ");
+	print_memory(got, sizeof(got));
+	printf("\n");
+
+	char str2[10] = "World";
+	memcpy(expected, str2, sizeof(str2));
+	memcpy(got, str2, sizeof(str2));
+	bzero(expected, 5);
+	ft_bzero(got, 5);
+	result = memcmp(expected, got, sizeof(str2));
+	printf(result == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str2, 5) | Expected : ");
+	print_memory(expected, sizeof(expected));
+	printf(" | Got : ");
+	print_memory(got, sizeof(got));
+	printf("\n");
+
+	char str3[10] = "Test";
+	memcpy(expected, str3, sizeof(str3));
+	memcpy(got, str3, sizeof(str3));
+	bzero(expected + 1, 0);
+	ft_bzero(got + 1, 0);
+	result = memcmp(expected, got, sizeof(str3));
+	printf(result == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str3 + 1, 0) | Expected : ");
+	print_memory(expected, sizeof(expected));
+	printf(" | Got : ");
+	print_memory(got, sizeof(got));
+	printf("\n");
+
+	char str4[10] = "42";
+	memcpy(expected, str4, sizeof(str4));
+	memcpy(got, str4, sizeof(str4));
+	bzero(expected, 10);
+	ft_bzero(got, 10);
+	result = memcmp(expected, got, sizeof(str4));
+	printf(result == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str4, 10) | Expected : ");
+	print_memory(expected, sizeof(expected));
+	printf(" | Got : ");
+	print_memory(got, sizeof(got));
+	printf("\n");
+
+	//__________________
 	*/
 }
 
@@ -672,4 +734,13 @@ char *strnstr(const char *haystack, const char *needle, size_t len)
 		haystack++;
 	}
 	return NULL;
+}
+
+void	print_memory(const void *ptr, size_t size)
+{
+	const unsigned char *p = (const unsigned char *)ptr;
+	for (size_t i = 0; i < size; i++)
+	{
+		printf("%02x ", p[i]);
+	}
 }
