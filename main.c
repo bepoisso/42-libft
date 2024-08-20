@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 15:12:22 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:37:49 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 #include <string.h>
 #include <ctype.h>
 
+char *strnstr(const char *haystack, const char *needle, size_t len);
+
 int	main(void)
 {
-/*
+	/*
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -437,7 +439,7 @@ int	main(void)
 	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_strchr(\"%s\", 'a') | Expected : \"%s\" | Got : \"%s\"\n", str7_strchr, expected_strchr ? expected_strchr : "NULL", got_strchr ? got_strchr : "NULL");
 	//__________________
-	*/
+	
 
 	//_________STRRCHR_________
 	printf("\n_________STRRCHR_________\n");
@@ -486,7 +488,81 @@ int	main(void)
 	printf(expected_strrchr == got_strrchr ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_strrchr(\"%s\", 'a') | Expected : \"%s\" | Got : \"%s\"\n", str7_strrchr, expected_strrchr ? expected_strrchr : "NULL", got_strrchr ? got_strrchr : "NULL");
 	//__________________
+	
+	
+	//_________STRNSTR_________
+	printf("\n_________STRNSTR_________\n");
+	char	*expected_strnstr;
+	char	*got_strnstr;
 
+	char haystack1[] = "Hello, World!";
+	char needle1[] = "World";
+	expected_strnstr = strnstr(haystack1, needle1, 13);
+	got_strnstr = ft_strnstr(haystack1, needle1, 13);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 13) | Expected : \"%s\" | Got : \"%s\"\n", haystack1, needle1, expected_strnstr, got_strnstr);
+
+	char haystack2[] = "Hello, World!";
+	char needle2[] = "World";
+	expected_strnstr = strnstr(haystack2, needle2, 7);
+	got_strnstr = ft_strnstr(haystack2, needle2, 7);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 7) | Expected : \"%s\" | Got : \"%s\"\n", haystack2, needle2, expected_strnstr ? expected_strnstr : "NULL", got_strnstr ? got_strnstr : "NULL");
+
+	char haystack3[] = "Hello, World!";
+	char needle3[] = "o,";
+	expected_strnstr = strnstr(haystack3, needle3, 5);
+	got_strnstr = ft_strnstr(haystack3, needle3, 5);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 5) | Expected : \"%s\" | Got : \"%s\"\n", haystack3, needle3, expected_strnstr ? expected_strnstr : "NULL", got_strnstr ? got_strnstr : "NULL");
+
+	char haystack4[] = "Hello, World!";
+	char needle4[] = "Hello";
+	expected_strnstr = strnstr(haystack4, needle4, 5);
+	got_strnstr = ft_strnstr(haystack4, needle4, 5);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 5) | Expected : \"%s\" | Got : \"%s\"\n", haystack4, needle4, expected_strnstr, got_strnstr);
+
+	char haystack5[] = "Hello, World!";
+	char needle5[] = "";
+	expected_strnstr = strnstr(haystack5, needle5, 13);
+	got_strnstr = ft_strnstr(haystack5, needle5, 13);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 13) | Expected : \"%s\" | Got : \"%s\"\n", haystack5, needle5, expected_strnstr, got_strnstr);
+
+	char haystack6[] = "Hello, World!";
+	char needle6[] = "World";
+	expected_strnstr = strnstr(haystack6, needle6, 0);
+	got_strnstr = ft_strnstr(haystack6, needle6, 0);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 0) | Expected : \"%s\" | Got : \"%s\"\n", haystack6, needle6, expected_strnstr ? expected_strnstr : "NULL", got_strnstr ? got_strnstr : "NULL");
+
+	char haystack7[] = "";
+	char needle7[] = "World!";
+	expected_strnstr = strnstr(haystack7, needle7, 13);
+	got_strnstr = ft_strnstr(haystack7, needle7, 13);
+	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strnstr(\"%s\", \"%s\", 13) | Expected : \"%s\" | Got : \"%s\"\n", haystack7, needle7, expected_strnstr ? expected_strnstr : "NULL", got_strnstr ? got_strnstr : "NULL");
+	//__________________
+	*/
+	
 }
 
 
+char *strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t needle_len;
+
+	if (*needle == '\0') {
+		return (char *)haystack;
+	}
+
+	needle_len = strlen(needle);
+	while (*haystack && len-- >= needle_len) {
+		if (*haystack == *needle && !strncmp(haystack, needle, needle_len)) {
+			return (char *)haystack;
+		}
+		haystack++;
+	}
+	return NULL;
+}
