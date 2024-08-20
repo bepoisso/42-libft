@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/19 02:30:37 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:27:49 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *nptr);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

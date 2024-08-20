@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/19 02:54:53 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 13:28:46 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -324,6 +324,69 @@ int	main(void)
 	got_strlcat = ft_strlcat(dst7_ft_strlcat, src7_strlcat, sizeof(dst7_ft_strlcat));
 	printf(expected_strlcat == got_strlcat && strcmp(dst7_strlcat, dst7_ft_strlcat) == 0 ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_strlcat(dst, \"%s\", %lu) | Expected : %lu | Got : %lu | Result: \"%s\"\n", src7_strlcat, sizeof(dst7_strlcat), expected_strlcat, got_strlcat, dst7_ft_strlcat);
+	//__________________
+	
+
+	//_________STRNCMP_________
+	printf("\n_________STRNCMP_________\n");
+	int	expected_strncmp;
+	int	got_strncmp;
+
+	char str1_strncmp[] = "Hello";
+	char str2_strncmp[] = "Hello";
+	expected_strncmp = strncmp(str1_strncmp, str2_strncmp, 5);
+	got_strncmp = ft_strncmp(str1_strncmp, str2_strncmp, 5);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str1_strncmp, str2_strncmp, expected_strncmp, got_strncmp);
+
+	char str3_strncmp[] = "Hello";
+	char str4_strncmp[] = "HelLo";
+	expected_strncmp = strncmp(str3_strncmp, str4_strncmp, 5);
+	got_strncmp = ft_strncmp(str3_strncmp, str4_strncmp, 5);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str3_strncmp, str4_strncmp, expected_strncmp, got_strncmp);
+
+	char str5_strncmp[] = "Hello";
+	char str6_strncmp[] = "Hell";
+	expected_strncmp = strncmp(str5_strncmp, str6_strncmp, 5);
+	got_strncmp = ft_strncmp(str5_strncmp, str6_strncmp, 5);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str5_strncmp, str6_strncmp, expected_strncmp, got_strncmp);
+
+	char str7_strncmp[] = "Hello";
+	char str8_strncmp[] = "HelloWorld";
+	expected_strncmp = strncmp(str7_strncmp, str8_strncmp, 5);
+	got_strncmp = ft_strncmp(str7_strncmp, str8_strncmp, 5);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str7_strncmp, str8_strncmp, expected_strncmp, got_strncmp);
+
+	char str9_strncmp[] = "Hello";
+	char str10_strncmp[] = "World";
+	expected_strncmp = strncmp(str9_strncmp, str10_strncmp, 3);
+	got_strncmp = ft_strncmp(str9_strncmp, str10_strncmp, 3);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 3) | Expected : %d | Got : %d\n", str9_strncmp, str10_strncmp, expected_strncmp, got_strncmp);
+
+	char str11_strncmp[] = "abcd";
+	char str12_strncmp[] = "abce";
+	expected_strncmp = strncmp(str11_strncmp, str12_strncmp, 4);
+	got_strncmp = ft_strncmp(str11_strncmp, str12_strncmp, 4);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 4) | Expected : %d | Got : %d\n", str11_strncmp, str12_strncmp, expected_strncmp, got_strncmp);
+
+	char str13_strncmp[] = "test";
+	char str14_strncmp[] = "test";
+	expected_strncmp = strncmp(str13_strncmp, str14_strncmp, 0);
+	got_strncmp = ft_strncmp(str13_strncmp, str14_strncmp, 0);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 0) | Expected : %d | Got : %d\n", str13_strncmp, str14_strncmp, expected_strncmp, got_strncmp);
+	
+	char str15_strncmp[] = "Hell";
+	char str16_strncmp[] = "Hello";
+	expected_strncmp = strncmp(str15_strncmp, str16_strncmp, 5);
+	got_strncmp = ft_strncmp(str15_strncmp, str16_strncmp, 5);
+	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str15_strncmp, str16_strncmp, expected_strncmp, got_strncmp);
 	//__________________
 	*/
 }
