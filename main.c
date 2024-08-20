@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 17:37:49 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:58:58 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -544,8 +544,115 @@ int	main(void)
 	printf(expected_strnstr == got_strnstr ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_strnstr(\"%s\", \"%s\", 13) | Expected : \"%s\" | Got : \"%s\"\n", haystack7, needle7, expected_strnstr ? expected_strnstr : "NULL", got_strnstr ? got_strnstr : "NULL");
 	//__________________
+
+	//_________TOUPPER_________
+	printf("\n_________TOUPPER_________\n");
+	int	expected_toupper;
+	int	got_toupper;
+
+	char c_toupper = 'a';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = 'z';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = 'A';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = 'Z';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = '1';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = '!';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = ' ';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+
+	c_toupper = '#';
+	expected_toupper = toupper(c_toupper);
+	got_toupper = ft_toupper(c_toupper);
+	printf(expected_toupper == got_toupper ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_toupper('%c') | Expected : '%c' | Got : '%c'\n", c_toupper, expected_toupper, got_toupper);
+	//__________________
+
+	//_________TOLOWER_________
+	printf("\n_________TOLOWER_________\n");
+	int	expected_tolower;
+	int	got_tolower;
+
+	char c_tolower = 'A';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = 'Z';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = 'a';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = 'z';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = '1';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = '!';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = ' ';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+
+	c_tolower = '#';
+	expected_tolower = tolower(c_tolower);
+	got_tolower = ft_tolower(c_tolower);
+	printf(expected_tolower == got_tolower ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
+	//__________________
 	*/
-	
 }
 
 
