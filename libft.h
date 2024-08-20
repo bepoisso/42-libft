@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 18:05:58 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:22:48 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*ft_strnstr(const char *big,	const char *little, size_t len);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
