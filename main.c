@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 13:28:46 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:04:32 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -388,7 +388,58 @@ int	main(void)
 	printf(expected_strncmp == got_strncmp ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_strncmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str15_strncmp, str16_strncmp, expected_strncmp, got_strncmp);
 	//__________________
+	
+
+	//_________STRCHR_________
+	printf("\n_________STRCHR_________\n");
+	char	*expected_strchr;
+	char	*got_strchr;
+
+	char str1_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str1_strchr, 'W');
+	got_strchr = ft_strchr(str1_strchr, 'W');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", 'W') | Expected : \"%s\" | Got : \"%s\"\n", str1_strchr, expected_strchr, got_strchr);
+
+	char str2_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str2_strchr, 'o');
+	got_strchr = ft_strchr(str2_strchr, 'o');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", 'o') | Expected : \"%s\" | Got : \"%s\"\n", str2_strchr, expected_strchr, got_strchr);
+
+	char str3_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str3_strchr, 'z');
+	got_strchr = ft_strchr(str3_strchr, 'z');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", 'z') | Expected : \"%s\" | Got : \"%s\"\n", str3_strchr, expected_strchr ? expected_strchr : "NULL", got_strchr ? got_strchr : "NULL");
+
+	char str4_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str4_strchr, ',');
+	got_strchr = ft_strchr(str4_strchr, ',');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", ',') | Expected : \"%s\" | Got : \"%s\"\n", str4_strchr, expected_strchr, got_strchr);
+
+	char str5_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str5_strchr, 'H');
+	got_strchr = ft_strchr(str5_strchr, 'H');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", 'H') | Expected : \"%s\" | Got : \"%s\"\n", str5_strchr, expected_strchr, got_strchr);
+
+	char str6_strchr[] = "Hello, World!";
+	expected_strchr = strchr(str6_strchr, '\0');
+	got_strchr = ft_strchr(str6_strchr, '\0');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", '\\0') | Expected : \"%s\" | Got : \"%s\"\n", str6_strchr, expected_strchr, got_strchr);
+
+	char str7_strchr[] = "";
+	expected_strchr = strchr(str7_strchr, 'a');
+	got_strchr = ft_strchr(str7_strchr, 'a');
+	printf(expected_strchr == got_strchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strchr(\"%s\", 'a') | Expected : \"%s\" | Got : \"%s\"\n", str7_strchr, expected_strchr ? expected_strchr : "NULL", got_strchr ? got_strchr : "NULL");
+	//__________________
 	*/
+
+
 }
 
 
