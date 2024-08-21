@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/22 01:02:49 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/22 01:41:19 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@
 ## VARIABLES
 
 NAME = libft.a
-
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INC_PATH = .
 SRC_PATH = .
@@ -24,7 +23,8 @@ OBJ_PATH = .
 ################################################################################
 ## SOURCES
 
-SRC_FILES =ft_atoi.c\
+SRC_FILES=\
+ft_atoi.c\
 ft_bzero.c\
 ft_isalnum.c\
 ft_isalpha.c\
@@ -45,6 +45,7 @@ ft_strnstr.c\
 ft_strrchr.c\
 ft_tolower.c\
 ft_toupper.c\
+ft_strdup.c\
 
 
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
@@ -56,7 +57,7 @@ OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $@ $^
+	ar rcs $@ $^
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
@@ -69,4 +70,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

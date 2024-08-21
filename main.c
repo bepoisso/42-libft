@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/22 00:51:46 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/22 01:40:40 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -931,7 +931,7 @@ int	main(void)
 	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_memcmp(\"%s\", \"%s\", 6) | Expected : %d | Got : %d\n", str19_memcmp, str20_memcmp, expected_memcmp, got_memcmp);
 	//__________________
-	*/
+	
 
 
 	//_________MEMCHR_________
@@ -1123,6 +1123,85 @@ int	main(void)
 	print_memory(got10, 15);
 	printf("\n");
 	//__________________
+
+
+	//_________STRDUP_________
+	printf("\n_________STRDUP_________\n");
+	
+	char expected1_strdup[15] = "Hello, World!";
+	char *got1_strdup;
+	got1_strdup = ft_strdup(expected1_strdup);
+	printf(strcmp(expected1_strdup, got1_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s", expected1_strdup, expected1_strdup, got1_strdup);
+	printf("\n");
+
+	char expected2_strdup[1] = "";
+	char *got2_strdup;
+	got2_strdup = ft_strdup(expected2_strdup);
+	printf(strcmp(expected2_strdup, got2_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s", expected2_strdup, expected2_strdup, got2_strdup);
+	printf("\n");
+
+	char expected3_strdup[25] = "This is a long string.";
+	char *got3_strdup;
+	got3_strdup = ft_strdup(expected3_strdup);
+	printf(strcmp(expected3_strdup, got3_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected3_strdup, expected3_strdup, got3_strdup);
+
+	char expected4_strdup[10] = "123456789";
+	char *got4_strdup;
+	got4_strdup = ft_strdup(expected4_strdup);
+	printf(strcmp(expected4_strdup, got4_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected4_strdup, expected4_strdup, got4_strdup);
+
+	char expected5_strdup[5] = "ABCD";
+	char *got5_strdup;
+	got5_strdup = ft_strdup(expected5_strdup);
+	printf(strcmp(expected5_strdup, got5_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected5_strdup, expected5_strdup, got5_strdup);
+
+	char expected6_strdup[20] = "Special#@$%&*Chars";
+	char *got6_strdup;
+	got6_strdup = ft_strdup(expected6_strdup);
+	printf(strcmp(expected6_strdup, got6_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected6_strdup, expected6_strdup, got6_strdup);
+
+	char expected7_strdup[53] = "Testing a very long string to see how it handles it!";
+	char *got7_strdup;
+	got7_strdup = ft_strdup(expected7_strdup);
+	printf(strcmp(expected7_strdup, got7_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected7_strdup, expected7_strdup, got7_strdup);
+
+	char expected8_strdup[7] = "123\0abc";
+	char *got8_strdup;
+	got8_strdup = ft_strdup(expected8_strdup);
+	printf(strcmp(expected8_strdup, got8_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected8_strdup, expected8_strdup, got8_strdup);
+
+	char expected9_strdup[2] = "A";
+	char *got9_strdup;
+	got9_strdup = ft_strdup(expected9_strdup);
+	printf(strcmp(expected9_strdup, got9_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected9_strdup, expected9_strdup, got9_strdup);
+
+	char expected10_strdup[3] = "Hi";
+	char *got10_strdup;
+	got10_strdup = ft_strdup(expected10_strdup);
+	printf(strcmp(expected10_strdup, got10_strdup) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strdup(\"%s\") | Expected : %s | Got : %s\n", expected10_strdup, expected10_strdup, got10_strdup);
+
+	free(got1_strdup);
+	free(got2_strdup);
+	free(got3_strdup);
+	free(got4_strdup);
+	free(got5_strdup);
+	free(got6_strdup);
+	free(got7_strdup);
+	free(got8_strdup);
+	free(got9_strdup);
+	free(got10_strdup);
+	//__________________
+	*/
 }
 
 
