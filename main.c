@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/21 19:40:14 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/22 00:51:46 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -854,8 +854,7 @@ int	main(void)
 	print_memory(dest3_memcpy, 1);
 	printf("\n");
 	//__________________
-	*/
-
+	
 	//_________MEMSCMP_________
 	printf("\n_________MEMCMP_________\n");
 	int	expected_memcmp;
@@ -931,10 +930,199 @@ int	main(void)
 	got_memcmp = ft_memcmp(str19_memcmp, str20_memcmp, 6);
 	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_memcmp(\"%s\", \"%s\", 6) | Expected : %d | Got : %d\n", str19_memcmp, str20_memcmp, expected_memcmp, got_memcmp);
+	//__________________
+	*/
 
+
+	//_________MEMCHR_________
+	printf("\n_________MEMCHR_________\n");
+	void *expected_memchr;
+	void *got_memchr;
+
+	char str1_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str1_memchr, 'W', 13);
+	got_memchr = ft_memchr(str1_memchr, 'W', 13);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'W', 13) | Expected : %p | Got : %p\n", str1_memchr, expected_memchr, got_memchr);
+
+	char str2_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str2_memchr, 'o', 5);
+	got_memchr = ft_memchr(str2_memchr, 'o', 5);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'o', 5) | Expected : %p | Got : %p\n", str2_memchr, expected_memchr, got_memchr);
+
+	char str3_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str3_memchr, 'z', 13);
+	got_memchr = ft_memchr(str3_memchr, 'z', 13);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'z', 13) | Expected : %p | Got : %p\n", str3_memchr, expected_memchr, got_memchr);
+
+	char str4_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str4_memchr, 'H', 1);
+	got_memchr = ft_memchr(str4_memchr, 'H', 1);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'H', 1) | Expected : %p | Got : %p\n", str4_memchr, expected_memchr, got_memchr);
+
+	char str5_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str5_memchr, '!', 13);
+	got_memchr = ft_memchr(str5_memchr, '!', 13);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", '!', 13) | Expected : %p | Got : %p\n", str5_memchr, expected_memchr, got_memchr);
+
+	char str6_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str6_memchr, ',', 7);
+	got_memchr = ft_memchr(str6_memchr, ',', 7);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", ',', 7) | Expected : %p | Got : %p\n", str6_memchr, expected_memchr, got_memchr);
+
+	char str7_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str7_memchr, 'o', 8);
+	got_memchr = ft_memchr(str7_memchr, 'o', 8);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'o', 8) | Expected : %p | Got : %p\n", str7_memchr, expected_memchr, got_memchr);
+
+	char str8_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str8_memchr, 'l', 2);
+	got_memchr = ft_memchr(str8_memchr, 'l', 2);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'l', 2) | Expected : %p | Got : %p\n", str8_memchr, expected_memchr, got_memchr);
+
+	char str9_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str9_memchr, 'l', 3);
+	got_memchr = ft_memchr(str9_memchr, 'l', 3);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'l', 3) | Expected : %p | Got : %p\n", str9_memchr, expected_memchr, got_memchr);
+
+	char str10_memchr[15] = "Hello, World!";
+	expected_memchr = memchr(str10_memchr, 'W', 0);
+	got_memchr = ft_memchr(str10_memchr, 'W', 0);
+	printf(expected_memchr == got_memchr ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memchr(\"%s\", 'W', 0) | Expected : %p | Got : %p\n", str10_memchr, expected_memchr, got_memchr);
 	//__________________
 
+	//_________MEMMOVE_________
+	printf("\n_________MEMMOVE_________\n");
 
+	char str1_memmove[15] = "Hello, World!";
+	char expected1[15] = "Hello, World!";
+	char got1[15] = "Hello, World!";
+	memmove(expected1 + 7, expected1, 5);
+	ft_memmove(got1 + 7, got1, 5);
+	printf(memcmp(expected1, got1, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 7, \"%s\", 5) | Expected : ", str1_memmove, str1_memmove);
+	print_memory(expected1, 15);
+	printf(" | Got : ");
+	print_memory(got1, 15);
+	printf("\n");
+
+	char str2_memmove[15] = "Overlap test";
+	char expected2[15] = "Overlap test";
+	char got2[15] = "Overlap test";
+	memmove(expected2, expected2 + 3, 8);
+	ft_memmove(got2, got2 + 3, 8);
+	printf(memcmp(expected2, got2, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\", \"%s\" + 3, 8) | Expected : ", str2_memmove, str2_memmove);
+	print_memory(expected2, 15);
+	printf(" | Got : ");
+	print_memory(got2, 15);
+	printf("\n");
+
+	char str3_memmove[15] = "Small move";
+	char expected3[15] = "Small move";
+	char got3[15] = "Small move";
+	memmove(expected3 + 2, expected3 + 1, 3);
+	ft_memmove(got3 + 2, got3 + 1, 3);
+	printf(memcmp(expected3, got3, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 2, \"%s\" + 1, 3) | Expected : ", str3_memmove, str3_memmove);
+	print_memory(expected3, 15);
+	printf(" | Got : ");
+	print_memory(got3, 15);
+	printf("\n");
+
+	char str4_memmove[15] = "No overlap";
+	char expected4[15] = "No overlap";
+	char got4[15] = "No overlap";
+	memmove(expected4 + 4, expected4, 5);
+	ft_memmove(got4 + 4, got4, 5);
+	printf(memcmp(expected4, got4, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 4, \"%s\", 5) | Expected : ", str4_memmove, str4_memmove);
+	print_memory(expected4, 15);
+	printf(" | Got : ");
+	print_memory(got4, 15);
+	printf("\n");
+
+	char str5_memmove[15] = "1234567890";
+	char expected5[15] = "1234567890";
+	char got5[15] = "1234567890";
+	memmove(expected5, expected5 + 5, 5);
+	ft_memmove(got5, got5 + 5, 5);
+	printf(memcmp(expected5, got5, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\", \"%s\" + 5, 5) | Expected : ", str5_memmove, str5_memmove);
+	print_memory(expected5, 15);
+	printf(" | Got : ");
+	print_memory(got5, 15);
+	printf("\n");
+
+	char str6_memmove[15] = "OverlapOverlap";
+	char expected6[15] = "OverlapOverlap";
+	char got6[15] = "OverlapOverlap";
+	memmove(expected6 + 7, expected6, 7);
+	ft_memmove(got6 + 7, got6, 7);
+	printf(memcmp(expected6, got6, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 7, \"%s\", 7) | Expected : ", str6_memmove, str6_memmove);
+	print_memory(expected6, 15);
+	printf(" | Got : ");
+	print_memory(got6, 15);
+	printf("\n");
+
+	char str7_memmove[15] = "1234567890";
+	char expected7[15] = "1234567890";
+	char got7[15] = "1234567890";
+	memmove(expected7 + 4, expected7 + 3, 5);
+	ft_memmove(got7 + 4, got7 + 3, 5);
+	printf(memcmp(expected7, got7, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 4, \"%s\" + 3, 5) | Expected : ", str7_memmove, str7_memmove);
+	print_memory(expected7, 15);
+	printf(" | Got : ");
+	print_memory(got7, 15);
+	printf("\n");
+
+	char str8_memmove[15] = "abcdefghij";
+	char expected8[15] = "abcdefghij";
+	char got8[15] = "abcdefghij";
+	memmove(expected8, expected8 + 2, 8);
+	ft_memmove(got8, got8 + 2, 8);
+	printf(memcmp(expected8, got8, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\", \"%s\" + 2, 8) | Expected : ", str8_memmove, str8_memmove);
+	print_memory(expected8, 15);
+	printf(" | Got : ");
+	print_memory(got8, 15);
+	printf("\n");
+
+	char str9_memmove[15] = "abcdefghij";
+	char expected9[15] = "abcdefghij";
+	char got9[15] = "abcdefghij";
+	memmove(expected9 + 3, expected9 + 1, 7);
+	ft_memmove(got9 + 3, got9 + 1, 7);
+	printf(memcmp(expected9, got9, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 3, \"%s\" + 1, 7) | Expected : ", str9_memmove, str9_memmove);
+	print_memory(expected9, 15);
+	printf(" | Got : ");
+	print_memory(got9, 15);
+	printf("\n");
+
+	char str10_memmove[15] = "abcdefghij";
+	char expected10[15] = "abcdefghij";
+	char got10[15] = "abcdefghij";
+	memmove(expected10 + 5, expected10 + 5, 5);
+	ft_memmove(got10 + 5, got10 + 5, 5);
+	printf(memcmp(expected10, got10, 15) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memmove(\"%s\" + 5, \"%s\" + 5, 5) | Expected : ", str10_memmove, str10_memmove);
+	print_memory(expected10, 15);
+	printf(" | Got : ");
+	print_memory(got10, 15);
+	printf("\n");
+	//__________________
 }
 
 
