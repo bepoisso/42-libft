@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 18:41:07 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:24:24 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_memory(const void *ptr, size_t size);
 
 int	main(void)
 {
-	/*
+	
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -655,170 +655,204 @@ int	main(void)
 	printf("For : ft_tolower('%c') | Expected : '%c' | Got : '%c'\n", c_tolower, expected_tolower, got_tolower);
 	//__________________
 
-		printf("\n_________BZERO_________\n");
+	//_________BZERO_________
+	printf("\n_________BZERO_________\n");
 
-	int		result;
-	char	expected[10];
-	char	got[10];
+	int result_bzero;
+	char expected_bzero[10];
+	char got_bzero[10];
 
-	char str1[10] = "Hello";
-	memcpy(expected, str1, sizeof(str1));
-	memcpy(got, str1, sizeof(str1));
-	bzero(expected + 2, 3);
-	ft_bzero(got + 2, 3);
-	result = memcmp(expected, got, sizeof(str1));
-	printf(result == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_bzero(str1 + 2, 3) | Expected : ");
-	print_memory(expected, sizeof(expected));
+	char str1_bzero[10] = "Hello";
+	memcpy(expected_bzero, str1_bzero, sizeof(str1_bzero));
+	memcpy(got_bzero, str1_bzero, sizeof(str1_bzero));
+	bzero(expected_bzero + 2, 3);
+	ft_bzero(got_bzero + 2, 3);
+	result_bzero = memcmp(expected_bzero, got_bzero, sizeof(str1_bzero));
+	printf(result_bzero == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str1_bzero + 2, 3) | Expected : ");
+	print_memory(expected_bzero, sizeof(expected_bzero));
 	printf(" | Got : ");
-	print_memory(got, sizeof(got));
+	print_memory(got_bzero, sizeof(got_bzero));
 	printf("\n");
 
-	char str2[10] = "World";
-	memcpy(expected, str2, sizeof(str2));
-	memcpy(got, str2, sizeof(str2));
-	bzero(expected, 5);
-	ft_bzero(got, 5);
-	result = memcmp(expected, got, sizeof(str2));
-	printf(result == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_bzero(str2, 5) | Expected : ");
-	print_memory(expected, sizeof(expected));
+	char str2_bzero[10] = "World";
+	memcpy(expected_bzero, str2_bzero, sizeof(str2_bzero));
+	memcpy(got_bzero, str2_bzero, sizeof(str2_bzero));
+	bzero(expected_bzero, 5);
+	ft_bzero(got_bzero, 5);
+	result_bzero = memcmp(expected_bzero, got_bzero, sizeof(str2_bzero));
+	printf(result_bzero == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str2_bzero, 5) | Expected : ");
+	print_memory(expected_bzero, sizeof(expected_bzero));
 	printf(" | Got : ");
-	print_memory(got, sizeof(got));
+	print_memory(got_bzero, sizeof(got_bzero));
 	printf("\n");
 
-	char str3[10] = "Test";
-	memcpy(expected, str3, sizeof(str3));
-	memcpy(got, str3, sizeof(str3));
-	bzero(expected + 1, 0);
-	ft_bzero(got + 1, 0);
-	result = memcmp(expected, got, sizeof(str3));
-	printf(result == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_bzero(str3 + 1, 0) | Expected : ");
-	print_memory(expected, sizeof(expected));
+	char str3_bzero[10] = "Test";
+	memcpy(expected_bzero, str3_bzero, sizeof(str3_bzero));
+	memcpy(got_bzero, str3_bzero, sizeof(str3_bzero));
+	bzero(expected_bzero + 1, 0);
+	ft_bzero(got_bzero + 1, 0);
+	result_bzero = memcmp(expected_bzero, got_bzero, sizeof(str3_bzero));
+	printf(result_bzero == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str3_bzero + 1, 0) | Expected : ");
+	print_memory(expected_bzero, sizeof(expected_bzero));
 	printf(" | Got : ");
-	print_memory(got, sizeof(got));
+	print_memory(got_bzero, sizeof(got_bzero));
 	printf("\n");
 
-	char str4[10] = "42";
-	memcpy(expected, str4, sizeof(str4));
-	memcpy(got, str4, sizeof(str4));
-	bzero(expected, 10);
-	ft_bzero(got, 10);
-	result = memcmp(expected, got, sizeof(str4));
-	printf(result == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_bzero(str4, 10) | Expected : ");
-	print_memory(expected, sizeof(expected));
+	char str4_bzero[10] = "42";
+	memcpy(expected_bzero, str4_bzero, sizeof(str4_bzero));
+	memcpy(got_bzero, str4_bzero, sizeof(str4_bzero));
+	bzero(expected_bzero, 10);
+	ft_bzero(got_bzero, 10);
+	result_bzero = memcmp(expected_bzero, got_bzero, sizeof(str4_bzero));
+	printf(result_bzero == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_bzero(str4_bzero, 10) | Expected : ");
+	print_memory(expected_bzero, sizeof(expected_bzero));
 	printf(" | Got : ");
-	print_memory(got, sizeof(got));
+	print_memory(got_bzero, sizeof(got_bzero));
 	printf("\n");
-
 	//__________________
-	*/
+	
 
- 	 //_________MEMSET_________
+	//_________MEMSET_________
 	printf("\n_________MEMSET_________\n");
 
-	char str1[10] = "Hello";
-	memset(str1 + 2, 'A', 3);
-	ft_memset(str1 + 2, 'A', 3);
-	printf(memcmp(str1, "HeAAA", 6) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str1 + 2, 'A', 3) | Expected : ");
+	char str1_memset[10] = "Hello";
+	memset(str1_memset + 2, 'A', 3);
+	ft_memset(str1_memset + 2, 'A', 3);
+	printf(memcmp(str1_memset, "HeAAA", 6) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str1_memset + 2, 'A', 3) | Expected : ");
 	print_memory("HeAAA", 6);
 	printf(" | Got : ");
-	print_memory(str1, 6);
+	print_memory(str1_memset, 6);
 	printf("\n");
 
-	char str2[10] = "World";
-	memset(str2, '*', 5);
-	ft_memset(str2, '*', 5);
-	printf(memcmp(str2, "*****", 6) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str2, '*', 5) | Expected : ");
+	char str2_memset[10] = "World";
+	memset(str2_memset, '*', 5);
+	ft_memset(str2_memset, '*', 5);
+	printf(memcmp(str2_memset, "*****", 6) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str2_memset, '*', 5) | Expected : ");
 	print_memory("*****", 6);
 	printf(" | Got : ");
-	print_memory(str2, 6);
+	print_memory(str2_memset, 6);
 	printf("\n");
 
-	char str3[10] = "Test";
-	memset(str3 + 1, 'B', 2);
-	ft_memset(str3 + 1, 'B', 2);
-	printf(memcmp(str3, "TBBt", 5) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str3 + 1, 'B', 2) | Expected : ");
+	char str3_memset[10] = "Test";
+	memset(str3_memset + 1, 'B', 2);
+	ft_memset(str3_memset + 1, 'B', 2);
+	printf(memcmp(str3_memset, "TBBt", 5) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str3_memset + 1, 'B', 2) | Expected : ");
 	print_memory("TBBt", 5);
 	printf(" | Got : ");
-	print_memory(str3, 5);
+	print_memory(str3_memset, 5);
 	printf("\n");
 
-	char str4[10] = "abcdef";
-	memset(str4, '0', 3);
-	ft_memset(str4, '0', 3);
-	printf(memcmp(str4, "000def", 7) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str4, '0', 3) | Expected : ");
+	char str4_memset[10] = "abcdef";
+	memset(str4_memset, '0', 3);
+	ft_memset(str4_memset, '0', 3);
+	printf(memcmp(str4_memset, "000def", 7) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str4_memset, '0', 3) | Expected : ");
 	print_memory("000def", 7);
 	printf(" | Got : ");
-	print_memory(str4, 7);
+	print_memory(str4_memset, 7);
 	printf("\n");
 
-	char str5[10] = "123456789";
-	memset(str5 + 4, 'X', 5);
-	ft_memset(str5 + 4, 'X', 5);
-	printf(memcmp(str5, "1234XXXXX", 9) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str5 + 4, 'X', 5) | Expected : ");
+	char str5_memset[10] = "123456789";
+	memset(str5_memset + 4, 'X', 5);
+	ft_memset(str5_memset + 4, 'X', 5);
+	printf(memcmp(str5_memset, "1234XXXXX", 9) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str5_memset + 4, 'X', 5) | Expected : ");
 	print_memory("1234XXXXX", 9);
 	printf(" | Got : ");
-	print_memory(str5, 9);
+	print_memory(str5_memset, 9);
 	printf("\n");
 
-	char str6[10] = "xxxxxxx";
-	memset(str6, 'Y', 4);
-	ft_memset(str6, 'Y', 4);
-	printf(memcmp(str6, "YYYYxxx", 7) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str6, 'Y', 4) | Expected : ");
+	char str6_memset[10] = "xxxxxxx";
+	memset(str6_memset, 'Y', 4);
+	ft_memset(str6_memset, 'Y', 4);
+	printf(memcmp(str6_memset, "YYYYxxx", 7) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str6_memset, 'Y', 4) | Expected : ");
 	print_memory("YYYYxxx", 7);
 	printf(" | Got : ");
-	print_memory(str6, 7);
+	print_memory(str6_memset, 7);
 	printf("\n");
 
-	char str7[10] = "abcde";
-	memset(str7 + 2, '!', 3);
-	ft_memset(str7 + 2, '!', 3);
-	printf(memcmp(str7, "ab!!!", 5) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str7 + 2, '!', 3) | Expected : ");
+	char str7_memset[10] = "abcde";
+	memset(str7_memset + 2, '!', 3);
+	ft_memset(str7_memset + 2, '!', 3);
+	printf(memcmp(str7_memset, "ab!!!", 5) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str7_memset + 2, '!', 3) | Expected : ");
 	print_memory("ab!!!", 5);
 	printf(" | Got : ");
-	print_memory(str7, 5);
+	print_memory(str7_memset, 5);
 	printf("\n");
 
-	char str8[10] = "zzzzzzzzz";
-	memset(str8, ' ', 9);
-	ft_memset(str8, ' ', 9);
-	printf(memcmp(str8, "         ", 9) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str8, ' ', 9) | Expected : ");
+	char str8_memset[10] = "zzzzzzzzz";
+	memset(str8_memset, ' ', 9);
+	ft_memset(str8_memset, ' ', 9);
+	printf(memcmp(str8_memset, "         ", 9) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str8_memset, ' ', 9) | Expected : ");
 	print_memory("         ", 9);
 	printf(" | Got : ");
-	print_memory(str8, 9);
+	print_memory(str8_memset, 9);
 	printf("\n");
 
-	char str9[10] = "1234";
-	memset(str9, '0', 4);
-	ft_memset(str9, '0', 4);
-	printf(memcmp(str9, "0000", 4) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str9, '0', 4) | Expected : ");
+	char str9_memset[10] = "1234";
+	memset(str9_memset, '0', 4);
+	ft_memset(str9_memset, '0', 4);
+	printf(memcmp(str9_memset, "0000", 4) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str9_memset, '0', 4) | Expected : ");
 	print_memory("0000", 4);
 	printf(" | Got : ");
-	print_memory(str9, 4);
+	print_memory(str9_memset, 4);
 	printf("\n");
 
-	char str10[10] = "567890";
-	memset(str10 + 3, 'X', 3);
-	ft_memset(str10 + 3, 'X', 3);
-	printf(memcmp(str10, "567XXX", 6) == 0 ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_memset(str10 + 3, 'X', 3) | Expected : ");
+	char str10_memset[10] = "567890";
+	memset(str10_memset + 3, 'X', 3);
+	ft_memset(str10_memset + 3, 'X', 3);
+	printf(memcmp(str10_memset, "567XXX", 6) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memset(str10_memset + 3, 'X', 3) | Expected : ");
 	print_memory("567XXX", 6);
 	printf(" | Got : ");
-	print_memory(str10, 6);
+	print_memory(str10_memset, 6);
+	printf("\n");
+	//__________________
+	
+
+	//_________MEMSCPY_________
+	printf("\n_________MEMCPY_________\n");
+
+	char str1_memcpy[10] = "Hello";
+	char dest1_memcpy[10] = {0};
+	ft_memcpy(dest1_memcpy, str1_memcpy, 5);
+	printf(memcmp(dest1_memcpy, "Hello", 5) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcpy(dest1_memcpy, str1_memcpy, 5) | Expected : ");
+	print_memory("Hello", 5);
+	printf(" | Got : ");
+	print_memory(dest1_memcpy, 5);
 	printf("\n");
 
+	char str2_memcpy[10] = "World";
+	char dest2_memcpy[10] = {0};
+	ft_memcpy(dest2_memcpy, str2_memcpy, 5);
+	printf(memcmp(dest2_memcpy, "World", 5) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcpy(dest2_memcpy, str2_memcpy, 5) | Expected : ");
+	print_memory("World", 5);
+	printf(" | Got : ");
+	print_memory(dest2_memcpy, 5);
+	printf("\n");
+
+	char str3_memcpy[10] = "";
+	char dest3_memcpy[10] = {1};
+	ft_memcpy(dest3_memcpy, str3_memcpy, 1);
+	printf(memcmp(dest3_memcpy, "", 1) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcpy(dest3_memcpy, str3_memcpy, 1) | Expected : ");
+	print_memory("", 1);
+	printf(" | Got : ");
+	print_memory(dest3_memcpy, 1);
+	printf("\n");
 	//__________________
 }
 
