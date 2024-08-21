@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:31:09 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/20 17:42:45 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:17:46 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (c == s[i])
+		if ((char)c == s[i])
 			return ((char *)s + i);
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s + i);
 	return (NULL);
 }
