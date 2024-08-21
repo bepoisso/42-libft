@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:40:42 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/21 18:50:37 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:22:17 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*ptr_dest;
 
 	i = 0;
+	if (!src && !dest)
+		return (NULL);
 	ptr_src = (const char *)src;
 	ptr_dest = (char *)dest;
 	while (i < n)
