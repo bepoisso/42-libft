@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/21 19:48:01 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/22 00:18:00 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJ_PATH = .
 
 SRC_FILES = ft_atoi.c ft_bzero.c\
 ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c\
-ft_memcpy.c ft_memset.c ft_memcmp.c\
+ft_memcpy.c ft_memset.c ft_memcmp.c ft_memchr.c\
 ft_strchr.c ft_strlcat.c ft_strlcpy.c\
 ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c\
 ft_tolower.c ft_toupper.c
