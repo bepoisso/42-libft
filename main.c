@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/21 18:44:09 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:40:14 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -855,6 +855,86 @@ int	main(void)
 	printf("\n");
 	//__________________
 	*/
+
+	//_________MEMSCMP_________
+	printf("\n_________MEMCMP_________\n");
+	int	expected_memcmp;
+	int	got_memcmp;
+	
+	
+	char str1_memcmp[10] = "Hello";
+	char str2_memcmp[10] = "Hello";
+	expected_memcmp = memcmp(str1_memcmp, str2_memcmp, 5);
+	got_memcmp = ft_memcmp(str1_memcmp, str2_memcmp, 5);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str1_memcmp, str2_memcmp, expected_memcmp, got_memcmp);
+
+	char str3_memcmp[10] = "Hello";
+	char str4_memcmp[10] = "Hellz";
+	expected_memcmp = memcmp(str3_memcmp, str4_memcmp, 5);
+	got_memcmp = ft_memcmp(str3_memcmp, str4_memcmp, 5);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str3_memcmp, str4_memcmp, expected_memcmp, got_memcmp);
+
+	char str5_memcmp[10] = "Hello";
+	char str6_memcmp[10] = "HelLo";
+	expected_memcmp = memcmp(str5_memcmp, str6_memcmp, 5);
+	got_memcmp = ft_memcmp(str5_memcmp, str6_memcmp, 5);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str5_memcmp, str6_memcmp, expected_memcmp, got_memcmp);
+
+	char str7_memcmp[10] = "Hello";
+	char str8_memcmp[10] = "He";
+	expected_memcmp = memcmp(str7_memcmp, str8_memcmp, 2);
+	got_memcmp = ft_memcmp(str7_memcmp, str8_memcmp, 2);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 2) | Expected : %d | Got : %d\n", str7_memcmp, str8_memcmp, expected_memcmp, got_memcmp);
+
+	char str9_memcmp[10] = "Hello";
+	char str10_memcmp[10] = "He";
+	expected_memcmp = memcmp(str9_memcmp, str10_memcmp, 3);
+	got_memcmp = ft_memcmp(str9_memcmp, str10_memcmp, 3);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 3) | Expected : %d | Got : %d\n", str9_memcmp, str10_memcmp, expected_memcmp, got_memcmp);
+
+	char str11_memcmp[10] = "Hello";
+	char str12_memcmp[10] = "";
+	expected_memcmp = memcmp(str11_memcmp, str12_memcmp, 0);
+	got_memcmp = ft_memcmp(str11_memcmp, str12_memcmp, 0);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 0) | Expected : %d | Got : %d\n", str11_memcmp, str12_memcmp, expected_memcmp, got_memcmp);
+
+	char str13_memcmp[10] = "";
+	char str14_memcmp[10] = "";
+	expected_memcmp = memcmp(str13_memcmp, str14_memcmp, 1);
+	got_memcmp = ft_memcmp(str13_memcmp, str14_memcmp, 1);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 1) | Expected : %d | Got : %d\n", str13_memcmp, str14_memcmp, expected_memcmp, got_memcmp);
+
+	char str15_memcmp[10] = "abcdef";
+	char str16_memcmp[10] = "abcdez";
+	expected_memcmp = memcmp(str15_memcmp, str16_memcmp, 5);
+	got_memcmp = ft_memcmp(str15_memcmp, str16_memcmp, 5);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 5) | Expected : %d | Got : %d\n", str15_memcmp, str16_memcmp, expected_memcmp, got_memcmp);
+
+	char str17_memcmp[10] = "abcdef";
+	char str18_memcmp[10] = "abcdez";
+	expected_memcmp = memcmp(str17_memcmp, str18_memcmp, 6);
+	got_memcmp = ft_memcmp(str17_memcmp, str18_memcmp, 6);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 6) | Expected : %d | Got : %d\n", str17_memcmp, str18_memcmp, expected_memcmp, got_memcmp);
+
+	char str19_memcmp[10] = "abcdef";
+	char str20_memcmp[10] = "abcdef";
+	expected_memcmp = memcmp(str19_memcmp, str20_memcmp, 6);
+	got_memcmp = ft_memcmp(str19_memcmp, str20_memcmp, 6);
+	printf(expected_memcmp == got_memcmp ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_memcmp(\"%s\", \"%s\", 6) | Expected : %d | Got : %d\n", str19_memcmp, str20_memcmp, expected_memcmp, got_memcmp);
+
+	//__________________
+
+
 }
 
 

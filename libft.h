@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/21 17:42:43 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:26:44 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		ft_tolower(int c);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif
