@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/21 18:24:24 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:44:09 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_memory(const void *ptr, size_t size);
 
 int	main(void)
 {
-	
+	/*
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -196,13 +196,13 @@ int	main(void)
 	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_atoi( \\t\\n\\r\\v\\f -2147483648) | Expected : %d | Got : %d\n", expected_atoi, got_atoi);
 
-	char str5_atoi[] = "  2147483647";
+	char str5_atoi[] = "  +2147483647";
 	expected_atoi = atoi(str5_atoi);
 	got_atoi = ft_atoi(str5_atoi);
 	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_atoi(%s) | Expected : %d | Got : %d\n", str5_atoi, expected_atoi, got_atoi);
 
-	char str6_atoi[] = " 42ABC";
+	char str6_atoi[] = " +00042ABC";
 	expected_atoi = atoi(str6_atoi);
 	got_atoi = ft_atoi(str6_atoi);
 	printf(expected_atoi == got_atoi ? "[PASS] " : "[FAIL] ");
@@ -854,6 +854,7 @@ int	main(void)
 	print_memory(dest3_memcpy, 1);
 	printf("\n");
 	//__________________
+	*/
 }
 
 
