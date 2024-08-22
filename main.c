@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/22 01:40:40 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/22 02:11:42 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1202,6 +1202,115 @@ int	main(void)
 	free(got10_strdup);
 	//__________________
 	*/
+
+	//_________CALLOC_________
+	printf("\n_________CALLOC_________\n");
+
+	size_t count1_calloc = 5, size1_calloc = sizeof(int);
+	int *arr1_calloc = (int *)ft_calloc(count1_calloc, size1_calloc);
+	printf(arr1_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count1_calloc, size1_calloc);
+	print_memory((int[5]){0, 0, 0, 0, 0}, count1_calloc * size1_calloc);
+	printf(" | Got : ");
+	print_memory(arr1_calloc, count1_calloc * size1_calloc);
+	printf("\n");
+
+	size_t count2_calloc = 10, size2_calloc = sizeof(char);
+	char *arr2_calloc = (char *)ft_calloc(count2_calloc, size2_calloc);
+	printf(arr2_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count2_calloc, size2_calloc);
+	print_memory((char[10]){0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, count2_calloc * size2_calloc);
+	printf(" | Got : ");
+	print_memory(arr2_calloc, count2_calloc * size2_calloc);
+	printf("\n");
+
+	size_t count3_calloc = 0, size3_calloc = sizeof(double);
+	double *arr3_calloc = (double *)ft_calloc(count3_calloc, size3_calloc);
+	printf(arr3_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count3_calloc, size3_calloc);
+	print_memory(NULL, count3_calloc * size3_calloc);
+	printf(" | Got : ");
+	print_memory(arr3_calloc, count3_calloc * size3_calloc);
+	printf("\n");
+
+	size_t count4_calloc = 7, size4_calloc = sizeof(short);
+	short *arr4_calloc = (short *)ft_calloc(count4_calloc, size4_calloc);
+	printf(arr4_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count4_calloc, size4_calloc);
+	print_memory((short[7]){0, 0, 0, 0, 0, 0, 0}, count4_calloc * size4_calloc);
+	printf(" | Got : ");
+	print_memory(arr4_calloc, count4_calloc * size4_calloc);
+	printf("\n");
+
+	size_t count5_calloc = 3, size5_calloc = sizeof(long);
+	long *arr5_calloc = (long *)ft_calloc(count5_calloc, size5_calloc);
+	printf(arr5_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count5_calloc, size5_calloc);
+	print_memory((long[3]){0, 0, 0}, count5_calloc * size5_calloc);
+	printf(" | Got : ");
+	print_memory(arr5_calloc, count5_calloc * size5_calloc);
+	printf("\n");
+
+	size_t count6_calloc = 4, size6_calloc = sizeof(float);
+	float *arr6_calloc = (float *)ft_calloc(count6_calloc, size6_calloc);
+	printf(arr6_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count6_calloc, size6_calloc);
+	print_memory((float[4]){0.0, 0.0, 0.0, 0.0}, count6_calloc * size6_calloc);
+	printf(" | Got : ");
+	print_memory(arr6_calloc, count6_calloc * size6_calloc);
+	printf("\n");
+
+	size_t count7_calloc = 5, size7_calloc = 1;
+	void *arr7_calloc = ft_calloc(count7_calloc, size7_calloc);
+	printf(arr7_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count7_calloc, size7_calloc);
+	print_memory((char[5]){0, 0, 0, 0, 0}, count7_calloc * size7_calloc);
+	printf(" | Got : ");
+	print_memory(arr7_calloc, count7_calloc * size7_calloc);
+	printf("\n");
+
+	size_t count8_calloc = 1, size8_calloc = 100;
+	char *arr8_calloc = (char *)ft_calloc(count8_calloc, size8_calloc);
+	printf(arr8_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count8_calloc, size8_calloc);
+	char expected8_calloc[100] = {0};
+	print_memory(expected8_calloc, count8_calloc * size8_calloc);
+	printf(" | Got : ");
+	print_memory(arr8_calloc, count8_calloc * size8_calloc);
+	printf("\n");
+
+	size_t count9_calloc = 2, size9_calloc = 50;
+	char *arr9_calloc = (char *)ft_calloc(count9_calloc, size9_calloc);
+	printf(arr9_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count9_calloc, size9_calloc);
+	char expected9_calloc[100] = {0};
+	print_memory(expected9_calloc, count9_calloc * size9_calloc);
+	printf(" | Got : ");
+	print_memory(arr9_calloc, count9_calloc * size9_calloc);
+	printf("\n");
+
+	size_t count10_calloc = 3, size10_calloc = 0;
+	void *arr10_calloc = ft_calloc(count10_calloc, size10_calloc);
+	printf(arr10_calloc != NULL ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_calloc(%zu, %zu) | Expected : ", count10_calloc, size10_calloc);
+	print_memory(NULL, count10_calloc * size10_calloc);
+	printf(" | Got : ");
+	print_memory(arr10_calloc, count10_calloc * size10_calloc);
+	printf("\n");
+
+	free(arr1_calloc);
+	free(arr2_calloc);
+	free(arr3_calloc);
+	free(arr4_calloc);
+	free(arr5_calloc);
+	free(arr6_calloc);
+	free(arr7_calloc);
+	free(arr8_calloc);
+	free(arr9_calloc);
+	free(arr10_calloc);
+
+	//__________________
+
 }
 
 
