@@ -6,12 +6,11 @@
 #    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/22 01:50:34 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/22 14:45:13 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-################################################################################
-## VARIABLES
+#_________________VARIABLE_________________
 
 NAME = libft.a
 CC = gcc
@@ -20,8 +19,7 @@ INC_PATH = .
 SRC_PATH = .
 OBJ_PATH = .
 
-################################################################################
-## SOURCES
+#_________________FILES_________________
 
 SRC_FILES=\
 ft_atoi.c\
@@ -46,14 +44,14 @@ ft_strrchr.c\
 ft_tolower.c\
 ft_toupper.c\
 ft_strdup.c\
-ft_calloc.c
+ft_calloc.c\
+ft_substr.c\
 
 
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
 
-################################################################################
-## RULES
+#_________________RULES_________________
 
 all: $(NAME)
 
@@ -71,4 +69,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

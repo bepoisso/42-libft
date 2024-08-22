@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/22 02:11:42 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/22 02:16:50 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_memory(const void *ptr, size_t size);
 
 int	main(void)
 {
-	/*
+	
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -1201,7 +1201,7 @@ int	main(void)
 	free(got9_strdup);
 	free(got10_strdup);
 	//__________________
-	*/
+	
 
 	//_________CALLOC_________
 	printf("\n_________CALLOC_________\n");
