@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/22 02:16:50 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:53:50 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_memory(const void *ptr, size_t size);
 
 int	main(void)
 {
-	
+	/*
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -1310,6 +1310,81 @@ int	main(void)
 	free(arr10_calloc);
 
 	//__________________
+
+	//_________SUBSTR_________
+	printf("\n_________SUBSTR_________\n");
+
+	char *str1_substr = "Hello, World!";
+	char *expected1_substr = "World";
+	char *got1_substr = ft_substr(str1_substr, 7, 5);
+	printf(strcmp(expected1_substr, got1_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 7, 5) | Expected : \"%s\" | Got : \"%s\"\n", str1_substr, expected1_substr, got1_substr);
+	free(got1_substr);
+
+	char *str2_substr = "Hello, World!";
+	char *expected2_substr = "Hello";
+	char *got2_substr = ft_substr(str2_substr, 0, 5);
+	printf(strcmp(expected2_substr, got2_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 0, 5) | Expected : \"%s\" | Got : \"%s\"\n", str2_substr, expected2_substr, got2_substr);
+	free(got2_substr);
+
+	char *str3_substr = "Hello, World!";
+	char *expected3_substr = "";
+	char *got3_substr = ft_substr(str3_substr, 50, 5);
+	printf(strcmp(expected3_substr, got3_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 50, 5) | Expected : \"%s\" | Got : \"%s\"\n", str3_substr, expected3_substr, got3_substr);
+	free(got3_substr);
+
+	char *str4_substr = "Hello, World!";
+	char *expected4_substr = "Hello, World!";
+	char *got4_substr = ft_substr(str4_substr, 0, 50);
+	printf(strcmp(expected4_substr, got4_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 0, 50) | Expected : \"%s\" | Got : \"%s\"\n", str4_substr, expected4_substr, got4_substr);
+	free(got4_substr);
+
+	char *str5_substr = "Hello";
+	char *expected5_substr = "o";
+	char *got5_substr = ft_substr(str5_substr, 4, 10);
+	printf(strcmp(expected5_substr, got5_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 4, 10) | Expected : \"%s\" | Got : \"%s\"\n", str5_substr, expected5_substr, got5_substr);
+	free(got5_substr);
+
+	char *str6_substr = "This is a test string.";
+	char *expected6_substr = "test";
+	char *got6_substr = ft_substr(str6_substr, 10, 4);
+	printf(strcmp(expected6_substr, got6_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 10, 4) | Expected : \"%s\" | Got : \"%s\"\n", str6_substr, expected6_substr, got6_substr);
+	free(got6_substr);
+
+	char *str7_substr = "Another test case.";
+	char *expected7_substr = "test case.";
+	char *got7_substr = ft_substr(str7_substr, 8, 50);
+	printf(strcmp(expected7_substr, got7_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 8, 50) | Expected : \"%s\" | Got : \"%s\"\n", str7_substr, expected7_substr, got7_substr);
+	free(got7_substr);
+
+	char *str8_substr = "";
+	char *expected8_substr = "";
+	char *got8_substr = ft_substr(str8_substr, 0, 5);
+	printf(strcmp(expected8_substr, got8_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 0, 5) | Expected : \"%s\" | Got : \"%s\"\n", str8_substr, expected8_substr, got8_substr);
+	free(got8_substr);
+
+	char *str9_substr = "Short string";
+	char *expected9_substr = "Short";
+	char *got9_substr = ft_substr(str9_substr, 0, 5);
+	printf(strcmp(expected9_substr, got9_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 0, 5) | Expected : \"%s\" | Got : \"%s\"\n", str9_substr, expected9_substr, got9_substr);
+	free(got9_substr);
+
+	char *str10_substr = "Edge case";
+	char *expected10_substr = "case";
+	char *got10_substr = ft_substr(str10_substr, 5, 454875416156);
+	printf(strcmp(expected10_substr, got10_substr) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_substr(\"%s\", 5, 454875416156) | Expected : \"%s\" | Got : \"%s\"\n", str10_substr, expected10_substr, got10_substr);
+	free(got10_substr);
+	//__________________
+	*/
 
 }
 
