@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/23 15:02:06 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/23 15:28:52 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1419,7 +1419,11 @@ int	main(void)
 	free(dest_strjoin);
 	//__________________
 	*/
-	
+	char str[] = "^Hello, World!#";
+	char set[] = "^#";
+	char *dest = NULL;
+	dest = ft_strtrim(str, set);
+	printf("Expected : \"Hello, World!\"\n Got : \"%s\"\n", dest);
 }
 
 
