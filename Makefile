@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/22 14:45:13 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/23 13:55:45 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ ft_toupper.c\
 ft_strdup.c\
 ft_calloc.c\
 ft_substr.c\
+ft_strjoin.c\
 
 
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))

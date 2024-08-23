@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/23 13:53:50 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/23 15:02:06 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1384,8 +1384,42 @@ int	main(void)
 	printf("For : ft_substr(\"%s\", 5, 454875416156) | Expected : \"%s\" | Got : \"%s\"\n", str10_substr, expected10_substr, got10_substr);
 	free(got10_substr);
 	//__________________
-	*/
+	
+	
+	//_________STRJOIN_________
+	printf("\n_________STRJOIN_________\n");
+	char *dest_strjoin = NULL;
 
+	char str1_strjoin[] = "Hello, ";
+	char str2_strjoin[] = "World!";
+	dest_strjoin = ft_strjoin(str1_strjoin, str2_strjoin);
+	printf(strcmp(dest_strjoin, "Hello, World!") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strjoin(\"%s\", \"%s\") | Expected : Hello, World! | Got : %s\n", str1_strjoin, str2_strjoin, dest_strjoin);
+	free(dest_strjoin);
+
+	char str3_strjoin[] = "42";
+	char str4_strjoin[] = " School";
+	dest_strjoin = ft_strjoin(str3_strjoin, str4_strjoin);
+	printf(strcmp(dest_strjoin, "42 School") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strjoin(\"%s\", \"%s\") | Expected : 42 School | Got : %s\n", str3_strjoin, str4_strjoin, dest_strjoin);
+	free(dest_strjoin);
+
+	char str5_strjoin[] = "";
+	char str6_strjoin[] = "Empty first part";
+	dest_strjoin = ft_strjoin(str5_strjoin, str6_strjoin);
+	printf(strcmp(dest_strjoin, "Empty first part") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strjoin(\"%s\", \"%s\") | Expected : Empty first part | Got : %s\n", str5_strjoin, str6_strjoin, dest_strjoin);
+	free(dest_strjoin);
+
+	char str7_strjoin[] = "Empty second part";
+	char str8_strjoin[] = "";
+	dest_strjoin = ft_strjoin(str7_strjoin, str8_strjoin);
+	printf(strcmp(dest_strjoin, "Empty second part") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strjoin(\"%s\", \"%s\") | Expected : Empty second part | Got : %s\n", str7_strjoin, str8_strjoin, dest_strjoin);
+	free(dest_strjoin);
+	//__________________
+	*/
+	
 }
 
 
