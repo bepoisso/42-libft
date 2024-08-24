@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 16:23:59 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/23 17:15:42 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/24 18:20:04 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,13 @@ char	**ft_split(char const *s, char c)
 	int		wc;
 
 	i = 0;
-	if (!s || !c)
-		return (NULL);
 	wc = word_count(s, c);
-	strs = (char **)malloc(sizeof(char *) * wc + 1);
+	strs = (char **)malloc(sizeof(char *) * (wc + 1));
 	while (i < wc)
 	{
 		while (*s == c)
 			s++;
-		strs[i] = malloc(sizeof(char) * ft_strllen(s, c) + 2);
+		strs[i] = malloc(sizeof(char) * ft_strllen(s, c) + 1);
 		ft_strlcpy(strs[i], s, ft_strllen(s, c) + 1);
 		s += ft_strllen(s, c) + 1;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/23 17:09:06 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/24 18:19:04 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 char	*strnstr(const char *haystack, const char *needle, size_t len);
 void	print_memory(const void *ptr, size_t size);
-void print_str_array(char **array);
+void	print_str_array(char **array);
+int		check_split_result(char **result, char **expected);
 
 int	main(void)
 {
@@ -1503,7 +1504,7 @@ int	main(void)
 	char delimiter1 = ',';
 	char **result1 = ft_split(s1_split, delimiter1);
 	char *expected1[] = {"Hello", "World", "This", "Is", "Split", NULL};
-	printf(memcmp(result1, expected1, sizeof(expected1)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result1, expected1) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s1_split, delimiter1);
 	print_str_array(expected1);
 	printf(" | Got : ");
@@ -1519,7 +1520,7 @@ int	main(void)
 	char delimiter2 = ',';
 	char **result2 = ft_split(s2_split, delimiter2);
 	char *expected2[] = {"OneWord", NULL};
-	printf(memcmp(result2, expected2, sizeof(expected2)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result2, expected2) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s2_split, delimiter2);
 	print_str_array(expected2);
 	printf(" | Got : ");
@@ -1535,7 +1536,7 @@ int	main(void)
 	char delimiter3 = ',';
 	char **result3 = ft_split(s3_split, delimiter3);
 	char *expected3[] = {"Leading", "Empty", "Trailing", NULL};
-	printf(memcmp(result3, expected3, sizeof(expected3)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result3, expected3) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s3_split, delimiter3);
 	print_str_array(expected3);
 	printf(" | Got : ");
@@ -1551,7 +1552,7 @@ int	main(void)
 	char delimiter4 = ',';
 	char **result4 = ft_split(s4_split, delimiter4);
 	char *expected4[] = {"Multiple", "Consecutive", "Delimiters", NULL};
-	printf(memcmp(result4, expected4, sizeof(expected4)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result4, expected4) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s4_split, delimiter4);
 	print_str_array(expected4);
 	printf(" | Got : ");
@@ -1567,7 +1568,7 @@ int	main(void)
 	char delimiter5 = ',';
 	char **result5 = ft_split(s5_split, delimiter5);
 	char *expected5[] = {"NoDelimiter", NULL};
-	printf(memcmp(result5, expected5, sizeof(expected5)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result5, expected5) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s5_split, delimiter5);
 	print_str_array(expected5);
 	printf(" | Got : ");
@@ -1583,7 +1584,7 @@ int	main(void)
 	char delimiter6 = ',';
 	char **result6 = ft_split(s6_split, delimiter6);
 	char *expected6[] = {NULL};
-	printf(memcmp(result6, expected6, sizeof(expected6)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result6, expected6) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s6_split, delimiter6);
 	print_str_array(expected6);
 	printf(" | Got : ");
@@ -1596,7 +1597,7 @@ int	main(void)
 	char delimiter7 = ',';
 	char **result7 = ft_split(s7_split, delimiter7);
 	char *expected7[] = {"Single", "Delimiter", NULL};
-	printf(memcmp(result7, expected7, sizeof(expected7)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result7, expected7) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s7_split, delimiter7);
 	print_str_array(expected7);
 	printf(" | Got : ");
@@ -1612,7 +1613,7 @@ int	main(void)
 	char delimiter8 = ',';
 	char **result8 = ft_split(s8_split, delimiter8);
 	char *expected8[] = {"TrailingDelimiter", NULL};
-	printf(memcmp(result8, expected8, sizeof(expected8)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result8, expected8) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s8_split, delimiter8);
 	print_str_array(expected8);
 	printf(" | Got : ");
@@ -1628,7 +1629,7 @@ int	main(void)
 	char delimiter9 = ',';
 	char **result9 = ft_split(s9_split, delimiter9);
 	char *expected9[] = {"DelimiterAtTheStart", "Middle", "End", NULL};
-	printf(memcmp(result9, expected9, sizeof(expected9)) == 0 ? "[PASS] " : "[FAIL] ");
+	printf(check_split_result(result9, expected9) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s9_split, delimiter9);
 	print_str_array(expected9);
 	printf(" | Got : ");
@@ -1640,11 +1641,11 @@ int	main(void)
 	}
 	free(result9);
 
-	char s10_split[] = "ManyDelimiters,,,,,,";
-	char delimiter10 = ',';
+	char s10_split[] = "      split       this for   me  !       ";
+	char delimiter10 = ' ';
 	char **result10 = ft_split(s10_split, delimiter10);
-	char *expected10[] = {"ManyDelimiters", NULL};
-	printf(memcmp(result10, expected10, sizeof(expected10)) == 0 ? "[PASS] " : "[FAIL] ");
+	char *expected10[] = {"split", "this", "for", "me", "!", NULL};
+	printf(check_split_result(result10, expected10) ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_split(\"%s\", '%c') | Expected : ", s10_split, delimiter10);
 	print_str_array(expected10);
 	printf(" | Got : ");
@@ -1657,6 +1658,18 @@ int	main(void)
 	free(result10);
 
 	//__________________
+}
+
+int check_split_result(char **result, char **expected)
+{
+	int i = 0;
+	while (expected[i] != NULL) {
+		if (result[i] == NULL || strcmp(result[i], expected[i]) != 0) {
+			return 0; // FAIL
+		}
+		i++;
+	}
+	return result[i] == NULL; // Pass if both arrays end at the same time
 }
 
 
