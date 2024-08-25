@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/24 18:19:04 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 12:16:18 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1495,169 +1495,233 @@ int	main(void)
 	free(result10);
 
 	//__________________
-	*/
 
-	//_________SPLIT_________
 	printf("\n_________SPLIT_________\n");
 
 	char s1_split[] = "Hello,World,This,Is,Split";
-	char delimiter1 = ',';
-	char **result1 = ft_split(s1_split, delimiter1);
-	char *expected1[] = {"Hello", "World", "This", "Is", "Split", NULL};
-	printf(check_split_result(result1, expected1) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s1_split, delimiter1);
-	print_str_array(expected1);
+	char delimiter1_split = ',';
+	char **result1_split = ft_split(s1_split, delimiter1_split);
+	char *expected1_split[] = {"Hello", "World", "This", "Is", "Split", NULL};
+	printf(check_split_result(result1_split, expected1_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s1_split, delimiter1_split);
+	print_str_array(expected1_split);
 	printf(" | Got : ");
-	print_str_array(result1);
+	print_str_array(result1_split);
 	printf("\n");
-	// Free result1
-	for (char **p = result1; *p; p++) {
-		free(*p);
+	for (char **p_split = result1_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result1);
+	free(result1_split);
 
 	char s2_split[] = "OneWord";
-	char delimiter2 = ',';
-	char **result2 = ft_split(s2_split, delimiter2);
-	char *expected2[] = {"OneWord", NULL};
-	printf(check_split_result(result2, expected2) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s2_split, delimiter2);
-	print_str_array(expected2);
+	char delimiter2_split = ',';
+	char **result2_split = ft_split(s2_split, delimiter2_split);
+	char *expected2_split[] = {"OneWord", NULL};
+	printf(check_split_result(result2_split, expected2_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s2_split, delimiter2_split);
+	print_str_array(expected2_split);
 	printf(" | Got : ");
-	print_str_array(result2);
+	print_str_array(result2_split);
 	printf("\n");
-	// Free result2
-	for (char **p = result2; *p; p++) {
-		free(*p);
+	for (char **p_split = result2_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result2);
+	free(result2_split);
 
 	char s3_split[] = "Leading,Empty,,Trailing,";
-	char delimiter3 = ',';
-	char **result3 = ft_split(s3_split, delimiter3);
-	char *expected3[] = {"Leading", "Empty", "Trailing", NULL};
-	printf(check_split_result(result3, expected3) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s3_split, delimiter3);
-	print_str_array(expected3);
+	char delimiter3_split = ',';
+	char **result3_split = ft_split(s3_split, delimiter3_split);
+	char *expected3_split[] = {"Leading", "Empty", "Trailing", NULL};
+	printf(check_split_result(result3_split, expected3_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s3_split, delimiter3_split);
+	print_str_array(expected3_split);
 	printf(" | Got : ");
-	print_str_array(result3);
+	print_str_array(result3_split);
 	printf("\n");
-	// Free result3
-	for (char **p = result3; *p; p++) {
-		free(*p);
+	for (char **p_split = result3_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result3);
+	free(result3_split);
 
 	char s4_split[] = "Multiple,Consecutive,,,Delimiters";
-	char delimiter4 = ',';
-	char **result4 = ft_split(s4_split, delimiter4);
-	char *expected4[] = {"Multiple", "Consecutive", "Delimiters", NULL};
-	printf(check_split_result(result4, expected4) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s4_split, delimiter4);
-	print_str_array(expected4);
+	char delimiter4_split = ',';
+	char **result4_split = ft_split(s4_split, delimiter4_split);
+	char *expected4_split[] = {"Multiple", "Consecutive", "Delimiters", NULL};
+	printf(check_split_result(result4_split, expected4_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s4_split, delimiter4_split);
+	print_str_array(expected4_split);
 	printf(" | Got : ");
-	print_str_array(result4);
+	print_str_array(result4_split);
 	printf("\n");
-	// Free result4
-	for (char **p = result4; *p; p++) {
-		free(*p);
+	for (char **p_split = result4_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result4);
+	free(result4_split);
 
 	char s5_split[] = "NoDelimiter";
-	char delimiter5 = ',';
-	char **result5 = ft_split(s5_split, delimiter5);
-	char *expected5[] = {"NoDelimiter", NULL};
-	printf(check_split_result(result5, expected5) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s5_split, delimiter5);
-	print_str_array(expected5);
+	char delimiter5_split = ',';
+	char **result5_split = ft_split(s5_split, delimiter5_split);
+	char *expected5_split[] = {"NoDelimiter", NULL};
+	printf(check_split_result(result5_split, expected5_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s5_split, delimiter5_split);
+	print_str_array(expected5_split);
 	printf(" | Got : ");
-	print_str_array(result5);
+	print_str_array(result5_split);
 	printf("\n");
-	// Free result5
-	for (char **p = result5; *p; p++) {
-		free(*p);
+	for (char **p_split = result5_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result5);
+	free(result5_split);
 
 	char s6_split[] = "";
-	char delimiter6 = ',';
-	char **result6 = ft_split(s6_split, delimiter6);
-	char *expected6[] = {NULL};
-	printf(check_split_result(result6, expected6) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s6_split, delimiter6);
-	print_str_array(expected6);
+	char delimiter6_split = ',';
+	char **result6_split = ft_split(s6_split, delimiter6_split);
+	char *expected6_split[] = {NULL};
+	printf(check_split_result(result6_split, expected6_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s6_split, delimiter6_split);
+	print_str_array(expected6_split);
 	printf(" | Got : ");
-	print_str_array(result6);
+	print_str_array(result6_split);
 	printf("\n");
-	// Free result6
-	free(result6);
+	free(result6_split);
 
 	char s7_split[] = "Single,Delimiter";
-	char delimiter7 = ',';
-	char **result7 = ft_split(s7_split, delimiter7);
-	char *expected7[] = {"Single", "Delimiter", NULL};
-	printf(check_split_result(result7, expected7) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s7_split, delimiter7);
-	print_str_array(expected7);
+	char delimiter7_split = ',';
+	char **result7_split = ft_split(s7_split, delimiter7_split);
+	char *expected7_split[] = {"Single", "Delimiter", NULL};
+	printf(check_split_result(result7_split, expected7_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s7_split, delimiter7_split);
+	print_str_array(expected7_split);
 	printf(" | Got : ");
-	print_str_array(result7);
+	print_str_array(result7_split);
 	printf("\n");
-	// Free result7
-	for (char **p = result7; *p; p++) {
-		free(*p);
+	for (char **p_split = result7_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result7);
+	free(result7_split);
 
 	char s8_split[] = "TrailingDelimiter,";
-	char delimiter8 = ',';
-	char **result8 = ft_split(s8_split, delimiter8);
-	char *expected8[] = {"TrailingDelimiter", NULL};
-	printf(check_split_result(result8, expected8) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s8_split, delimiter8);
-	print_str_array(expected8);
+	char delimiter8_split = ',';
+	char **result8_split = ft_split(s8_split, delimiter8_split);
+	char *expected8_split[] = {"TrailingDelimiter", NULL};
+	printf(check_split_result(result8_split, expected8_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s8_split, delimiter8_split);
+	print_str_array(expected8_split);
 	printf(" | Got : ");
-	print_str_array(result8);
+	print_str_array(result8_split);
 	printf("\n");
-	// Free result8
-	for (char **p = result8; *p; p++) {
-		free(*p);
+	for (char **p_split = result8_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result8);
+	free(result8_split);
 
 	char s9_split[] = "DelimiterAtTheStart,Middle,End";
-	char delimiter9 = ',';
-	char **result9 = ft_split(s9_split, delimiter9);
-	char *expected9[] = {"DelimiterAtTheStart", "Middle", "End", NULL};
-	printf(check_split_result(result9, expected9) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s9_split, delimiter9);
-	print_str_array(expected9);
+	char delimiter9_split = ',';
+	char **result9_split = ft_split(s9_split, delimiter9_split);
+	char *expected9_split[] = {"DelimiterAtTheStart", "Middle", "End", NULL};
+	printf(check_split_result(result9_split, expected9_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s9_split, delimiter9_split);
+	print_str_array(expected9_split);
 	printf(" | Got : ");
-	print_str_array(result9);
+	print_str_array(result9_split);
 	printf("\n");
-	// Free result9
-	for (char **p = result9; *p; p++) {
-		free(*p);
+	for (char **p_split = result9_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result9);
+	free(result9_split);
 
 	char s10_split[] = "      split       this for   me  !       ";
-	char delimiter10 = ' ';
-	char **result10 = ft_split(s10_split, delimiter10);
-	char *expected10[] = {"split", "this", "for", "me", "!", NULL};
-	printf(check_split_result(result10, expected10) ? "[PASS] " : "[FAIL] ");
-	printf("For : ft_split(\"%s\", '%c') | Expected : ", s10_split, delimiter10);
-	print_str_array(expected10);
+	char delimiter10_split = ' ';
+	char **result10_split = ft_split(s10_split, delimiter10_split);
+	char *expected10_split[] = {"split", "this", "for", "me", "!", NULL};
+	printf(check_split_result(result10_split, expected10_split) ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_split(\"%s\", '%c') | Expected : ", s10_split, delimiter10_split);
+	print_str_array(expected10_split);
 	printf(" | Got : ");
-	print_str_array(result10);
+	print_str_array(result10_split);
 	printf("\n");
-	// Free result10
-	for (char **p = result10; *p; p++) {
-		free(*p);
+	for (char **p_split = result10_split; *p_split; p_split++) {
+		free(*p_split);
 	}
-	free(result10);
-
+	free(result10_split);
 	//__________________
+
+
+	//_________ITOA_________
+	printf("\n_________ITOA_________\n");
+
+	int num1_itoa = 0;
+	char *result1_itoa = ft_itoa(num1_itoa);
+	char expected1_itoa[] = "0";
+	printf(strcmp(result1_itoa, expected1_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num1_itoa, expected1_itoa, result1_itoa);
+	free(result1_itoa);
+
+	int num2_itoa = -12345;
+	char *result2_itoa = ft_itoa(num2_itoa);
+	char expected2_itoa[] = "-12345";
+	printf(strcmp(result2_itoa, expected2_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num2_itoa, expected2_itoa, result2_itoa);
+	free(result2_itoa);
+
+	int num3_itoa = 12345;
+	char *result3_itoa = ft_itoa(num3_itoa);
+	char expected3_itoa[] = "12345";
+	printf(strcmp(result3_itoa, expected3_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num3_itoa, expected3_itoa, result3_itoa);
+	free(result3_itoa);
+
+	int num4_itoa = -1;
+	char *result4_itoa = ft_itoa(num4_itoa);
+	char expected4_itoa[] = "-1";
+	printf(strcmp(result4_itoa, expected4_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num4_itoa, expected4_itoa, result4_itoa);
+	free(result4_itoa);
+
+	int num5_itoa = 1;
+	char *result5_itoa = ft_itoa(num5_itoa);
+	char expected5_itoa[] = "1";
+	printf(strcmp(result5_itoa, expected5_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num5_itoa, expected5_itoa, result5_itoa);
+	free(result5_itoa);
+
+	int num6_itoa = 2147483647;
+	char *result6_itoa = ft_itoa(num6_itoa);
+	char expected6_itoa[] = "2147483647";
+	printf(strcmp(result6_itoa, expected6_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num6_itoa, expected6_itoa, result6_itoa);
+	free(result6_itoa);
+
+	int num7_itoa = -2147483648;
+	char *result7_itoa = ft_itoa(num7_itoa);
+	char expected7_itoa[] = "-2147483648";
+	printf(strcmp(result7_itoa, expected7_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num7_itoa, expected7_itoa, result7_itoa);
+	free(result7_itoa);
+
+	int num8_itoa = 1000000;
+	char *result8_itoa = ft_itoa(num8_itoa);
+	char expected8_itoa[] = "1000000";
+	printf(strcmp(result8_itoa, expected8_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num8_itoa, expected8_itoa, result8_itoa);
+	free(result8_itoa);
+
+	int num9_itoa = -999999;
+	char *result9_itoa = ft_itoa(num9_itoa);
+	char expected9_itoa[] = "-999999";
+	printf(strcmp(result9_itoa, expected9_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num9_itoa, expected9_itoa, result9_itoa);
+	free(result9_itoa);
+
+	int num10_itoa = 42;
+	char *result10_itoa = ft_itoa(num10_itoa);
+	char expected10_itoa[] = "42";
+	printf(strcmp(result10_itoa, expected10_itoa) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num10_itoa, expected10_itoa, result10_itoa);
+	free(result10_itoa);
+	//__________________
+	*/
+
 }
 
 int check_split_result(char **result, char **expected)
