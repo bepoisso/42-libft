@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 13:10:25 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 13:23:10 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <strings.h>
 #include <ctype.h>
+#include <fcntl.h>
 
 char	*strnstr(const char *haystack, const char *needle, size_t len);
 void	print_memory(const void *ptr, size_t size);
@@ -1795,6 +1796,36 @@ int	main(void)
 	printf("For : ft_strmapi(\"%s\", NULL) | Expected : %s | Got : %s\n", s5_strmapi, expected5_strmapi, got5_strmapi);
 	free(got5_strmapi);
 	//__________________
+
+	//_________PUTCHAR_FD_________
+	printf("\n_________PUTCHAR_FD_________\n");
+	char c_putchar_fd = 'A';
+	int fd_putchar_fd = open("output.test", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_putchar_fd == -1) {
+		perror("Failed to open file");
+		return (1);
+	}
+
+	ft_putchar_fd(c_putchar_fd, fd_putchar_fd);
+	close(fd_putchar_fd);
+
+	fd_putchar_fd = open("output.test", O_RDONLY);
+	if (fd_putchar_fd == -1) {
+		perror("Failed to open file");
+		return (1);
+	}
+
+	char buffer_putchar_fd[2] = {0};
+	read(fd_putchar_fd, buffer_putchar_fd, 1);
+	close(fd_putchar_fd);
+
+	printf(buffer_putchar_fd[0] == c_putchar_fd ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_putchar_fd('%c', fd) | Expected : %c | Got : %c\n", c_putchar_fd, c_putchar_fd, buffer_putchar_fd[0]);
+
+	if (remove("output.test") != 0) {
+		perror("Failed to delete file");
+		return (1);
+	}
 	*/
 
 }
