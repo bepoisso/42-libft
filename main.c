@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 15:15:56 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 17:04:37 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_file_content(const char *filename, const char *expected_content);
 
 int	main(void)
 {
-	/*
+	
 	//_________ISAPLHA_________
 	printf("_________ISAPLHA_________\n");
 	char c_isalpha;
@@ -1873,7 +1873,7 @@ int	main(void)
 		perror("Failed to delete file");
 	}
 	//__________________
-	*/
+	
 }
 
 void check_file_content(const char *filename, const char *expected_content)
