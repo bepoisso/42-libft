@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 14:21:38 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 14:27:23 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 15:00:18 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		lst = lst->next;
 		i++;
