@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/25 16:34:04 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/25 16:37:44 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ BONUS_FILES=\
 	ft_lstdelone.c\
 	ft_lstclear.c\
 	ft_lstiter.c\
+	ft_lstmap.c
 
 
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
