@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
+#    By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/25 14:57:48 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/25 15:12:01 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
