@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 13:23:10 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 13:50:21 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		check_split_result(char **result, char **expected);
 void	add_index(unsigned int i, char *c);
 void	to_uppercase(unsigned int i, char *c);
 char	add_index_char(unsigned int i, char c);
+void	check_file_content(const char *filename, const char *expected_content);
 
 int	main(void)
 {
@@ -1826,8 +1827,78 @@ int	main(void)
 		perror("Failed to delete file");
 		return (1);
 	}
-	*/
+	//__________________
+	
 
+	const char *filename = "test_output.txt";
+
+	//_________PUTSTR_FD_________
+	printf("\n_________PUTSTR_FD_________\n");
+	int fd_putstr_fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_putstr_fd < 0) {
+		perror("Failed to open file");
+		return 1;
+	}
+	ft_putstr_fd("Hello, World!", fd_putstr_fd);
+	close(fd_putstr_fd);
+	check_file_content(filename, "Hello, World!");
+	//__________________
+
+
+	//_________PUTENDL_FD_________
+	printf("\n_________PUTENDL_FD_________\n");
+	int fd_putendl_fd = open(filename, O_WRONLY | O_APPEND, 0644);
+	if (fd_putendl_fd < 0) {
+		perror("Failed to open file");
+		return 1;
+	}
+	ft_putendl_fd("This is a new line.", fd_putendl_fd);
+	close(fd_putendl_fd);
+	check_file_content(filename, "Hello, World!This is a new line.\n");
+	//__________________
+
+
+	//_________PUTNBR_FD_________
+	printf("\n_________PUTNBR_FD_________\n");
+	int fd_putnbr_fd = open(filename, O_WRONLY | O_APPEND, 0644);
+	if (fd_putnbr_fd < 0) {
+		perror("Failed to open file");
+		return 1;
+	}
+	ft_putnbr_fd(12345, fd_putnbr_fd);
+	close(fd_putnbr_fd);
+	check_file_content(filename, "Hello, World!This is a new line.\n12345");
+
+	if (unlink(filename) < 0) {
+		perror("Failed to delete file");
+	}
+	//__________________
+	*/
+}
+
+void check_file_content(const char *filename, const char *expected_content)
+{
+	char buffer[256];
+	int fd = open(filename, O_RDONLY);
+	if (fd < 0) {
+		perror("Failed to open file");
+		return;
+	}
+	ssize_t bytes_read = read(fd, buffer, sizeof(buffer) - 1);
+	if (bytes_read < 0) {
+		perror("Failed to read file");
+		close(fd);
+		return;
+	}
+	buffer[bytes_read] = '\0';
+	close(fd);
+
+	if (strcmp(buffer, expected_content) == 0) {
+		printf("[PASS] ");
+	} else {
+		printf("[FAIL] ");
+	}
+	printf("For file \"%s\" | Expected : \"%s\" | Got : \"%s\"\n", filename, expected_content, buffer);
 }
 
 void to_uppercase(unsigned int i, char *c)
