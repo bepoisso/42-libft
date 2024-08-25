@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 14:11:21 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 14:21:33 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	ft_putnbr_fd(int n, int fd);
 
 //__________BONUS_FUNC__________
 t_list	*ft_lstnew(void *content);
+int		ft_lstsize(t_list *lst);
 
 #endif
