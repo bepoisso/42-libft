@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 12:16:18 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 12:33:20 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ char	*strnstr(const char *haystack, const char *needle, size_t len);
 void	print_memory(const void *ptr, size_t size);
 void	print_str_array(char **array);
 int		check_split_result(char **result, char **expected);
+void	add_index(unsigned int i, char *c);
+void	to_uppercase(unsigned int i, char *c);
+
 
 int	main(void)
 {
@@ -1720,8 +1723,54 @@ int	main(void)
 	printf("For : ft_itoa(%d) | Expected : %s | Got : %s\n", num10_itoa, expected10_itoa, result10_itoa);
 	free(result10_itoa);
 	//__________________
-	*/
+	
+	//_________STRITERI_________
+	printf("_________STRITERI_________\n");
+	
+	char str1[] = "hello";
+	ft_striteri(str1, to_uppercase);
+	printf(strcmp(str1, "HELLO") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_striteri(\"hello\", to_uppercase) | Expected : \"HELLO\" | Got : \"%s\"\n", str1);
 
+
+	char str2[] = "abcd";
+	ft_striteri(str2, add_index);
+	printf(strcmp(str2, "aceg") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_striteri(\"abcd\", add_index) | Expected : \"aceg\" | Got : \"%s\"\n", str2);
+
+
+	char str3[] = "";
+	ft_striteri(str3, to_uppercase);
+	printf(strcmp(str3, "") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_striteri(\"\", to_uppercase) | Expected : \"\" | Got : \"%s\"\n", str3);
+
+
+	char str4[] = "1234!";
+	ft_striteri(str4, add_index);
+	printf(strcmp(str4, "1357\%") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_striteri(\"1234!\", add_index) | Expected : \"1358\" | Got : \"%s\"\n", str4);
+
+
+	char str5[] = "Test";
+	ft_striteri(str5, NULL);
+	printf(strcmp(str5, "Test") == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_striteri(\"Test\", NULL) | Expected : \"Test\" | Got : \"%s\"\n", str5);
+	//__________________
+	*/
+	
+}
+
+void to_uppercase(unsigned int i, char *c)
+{
+	(void)i;
+	if (*c >= 'a' && *c <= 'z') {
+		*c -= 32;
+	}
+}
+
+void add_index(unsigned int i, char *c)
+{
+	*c += i;
 }
 
 int check_split_result(char **result, char **expected)
@@ -1729,11 +1778,11 @@ int check_split_result(char **result, char **expected)
 	int i = 0;
 	while (expected[i] != NULL) {
 		if (result[i] == NULL || strcmp(result[i], expected[i]) != 0) {
-			return 0; // FAIL
+			return 0;
 		}
 		i++;
 	}
-	return result[i] == NULL; // Pass if both arrays end at the same time
+	return result[i] == NULL;
 }
 
 
