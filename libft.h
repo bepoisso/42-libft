@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 15:15:55 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 15:38:33 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 }	t_list;
 
 //__________DEFAULT_FUNC__________
-int		ft_isalpha(int c);
+int		ft_isalpha(int c);  
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);

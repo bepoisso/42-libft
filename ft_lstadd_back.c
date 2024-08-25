@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 14:42:00 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 15:15:36 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 16:14:46 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
+	t_list	*last;
 
 	if (!lst)
 		return ;
@@ -23,8 +23,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	current = *lst;
-	while (current->next)
-		current = current->next;
-	current->next = new;
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
