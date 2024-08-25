@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:05:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 16:23:41 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 16:34:20 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif
