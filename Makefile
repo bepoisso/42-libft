@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/25 13:33:36 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/25 14:19:19 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,22 +57,30 @@ ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
 
+BONUS_FILES=\
+	ft_lstnew.c\
+
 
 SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
+BONUS_SRCS = $(addprefix $(SRC_PATH)/, $(BONUS_FILES))
+BONUS_OBJS = $(addprefix $(OBJ_PATH)/, $(BONUS_FILES:.c=.o))
 
 #_________________RULES_________________
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	@ar rcs $@ $^
+
+bonus: $(BONUS_OBJS)
+	@ar rcs $(NAME) $^
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
