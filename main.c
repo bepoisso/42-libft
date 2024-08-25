@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 23:06:30 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 12:33:20 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 13:10:25 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_str_array(char **array);
 int		check_split_result(char **result, char **expected);
 void	add_index(unsigned int i, char *c);
 void	to_uppercase(unsigned int i, char *c);
-
+char	add_index_char(unsigned int i, char c);
 
 int	main(void)
 {
@@ -1756,8 +1756,47 @@ int	main(void)
 	printf(strcmp(str5, "Test") == 0 ? "[PASS] " : "[FAIL] ");
 	printf("For : ft_striteri(\"Test\", NULL) | Expected : \"Test\" | Got : \"%s\"\n", str5);
 	//__________________
-	*/
 	
+	//_________STRMAPI_________
+	printf("\n_________STRMAPI_________\n");
+
+	char s1_strmapi[] = "abc";
+	char *expected1_strmapi = "ace";
+	char *got1_strmapi = ft_strmapi(s1_strmapi, add_index_char);
+	printf(strcmp(expected1_strmapi, got1_strmapi) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strmapi(\"%s\", add_index_char) | Expected : %s | Got : %s\n", s1_strmapi, expected1_strmapi, got1_strmapi);
+	free(got1_strmapi);
+
+	char s2_strmapi[] = "Hello";
+	char *expected2_strmapi = "Hfnos";
+	char *got2_strmapi = ft_strmapi(s2_strmapi, add_index_char);
+	printf(strcmp(expected2_strmapi, got2_strmapi) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strmapi(\"%s\", add_index_char) | Expected : %s | Got : %s\n", s2_strmapi, expected2_strmapi, got2_strmapi);
+	free(got2_strmapi);
+
+	char s3_strmapi[] = "42";
+	char *expected3_strmapi = "43";
+	char *got3_strmapi = ft_strmapi(s3_strmapi, add_index_char);
+	printf(strcmp(expected3_strmapi, got3_strmapi) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strmapi(\"%s\", add_index_char) | Expected : %s | Got : %s\n", s3_strmapi, expected3_strmapi, got3_strmapi);
+	free(got3_strmapi);
+
+	char s4_strmapi[] = "";
+	char *expected4_strmapi = "";
+	char *got4_strmapi = ft_strmapi(s4_strmapi, add_index_char);
+	printf(strcmp(expected4_strmapi, got4_strmapi) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strmapi(\"%s\", add_index_char) | Expected : %s | Got : %s\n", s4_strmapi, expected4_strmapi, got4_strmapi);
+	free(got4_strmapi);
+
+	char s5_strmapi[] = "ABC";
+	char *expected5_strmapi = "";
+	char *got5_strmapi = ft_strmapi(s5_strmapi, NULL);
+	printf(strcmp(expected5_strmapi, got5_strmapi) == 0 ? "[PASS] " : "[FAIL] ");
+	printf("For : ft_strmapi(\"%s\", NULL) | Expected : %s | Got : %s\n", s5_strmapi, expected5_strmapi, got5_strmapi);
+	free(got5_strmapi);
+	//__________________
+	*/
+
 }
 
 void to_uppercase(unsigned int i, char *c)
@@ -1768,9 +1807,15 @@ void to_uppercase(unsigned int i, char *c)
 	}
 }
 
+
 void add_index(unsigned int i, char *c)
 {
 	*c += i;
+}
+
+char add_index_char(unsigned int i, char c)
+{
+	return (c + i);
 }
 
 int check_split_result(char **result, char **expected)
