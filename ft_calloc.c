@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 01:43:55 by bepoisso          #+#    #+#             */
-/*   Updated: 2024/08/25 15:16:07 by bepoisso         ###   ########.fr       */
+/*   Updated: 2024/08/25 17:04:21 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	int	*tab;
 
 	tab = NULL;
-	if (size == 0 || nmemb == 0)
-	{
-		size = 1;
-		nmemb = 1;
-	}
 	tab = malloc(nmemb * size);
 	if (tab == NULL)
 		return (NULL);
