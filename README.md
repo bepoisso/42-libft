@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://cdn.discordapp.com/attachments/783829038665433099/1278715942267912333/Black_And_White_Modern_Typographic_Simple_Virus_Apparel_Logo.png?ex=66d1d086&is=66d07f06&hm=0e4cd6f8bdc50f827700f8c1fea5d7aea327e525a3c8bc05dcb85c5acb8e5796&"  />
+  <img height="300" src="https://cdn.discordapp.com/attachments/783829038665433099/1278715942267912333/Black_And_White_Modern_Typographic_Simple_Virus_Apparel_Logo.png?ex=66d1d086&is=66d07f06&hm=0e4cd6f8bdc50f827700f8c1fea5d7aea327e525a3c8bc05dcb85c5acb8e5796&"  />
 </div>
 
 # Libft - Custom C Library
@@ -8,6 +8,8 @@ Libft is a comprehensive custom library written in C, aimed at providing an exte
 
 ## Great resources
 
+<li><a href="https://suspectedoceano.notion.site/Libft-acef68297e3a478f9463fe9d70023bb0">Notion's Oceano</a></li>
+<li><a href="https://github.com/xicodomingues/francinette">Libft Tester Francinette</a></li>
 
 
 ## Mandatory
