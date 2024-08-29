@@ -6,7 +6,7 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/25 23:30:19 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/29 14:46:17 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INC_PATH = .
-SRC_PATH = .
-OBJ_PATH = .
+INC_DIR = .
+SRC_DIR = .
+OBJ_DIR = .
 
 #_________________FILES_________________
 
@@ -69,10 +69,10 @@ BONUS_FILES=\
 	ft_lstmap_bonus.c
 
 
-SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
-OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
-BONUS_SRCS = $(addprefix $(SRC_PATH)/, $(BONUS_FILES))
-BONUS_OBJS = $(addprefix $(OBJ_PATH)/, $(BONUS_FILES:.c=.o))
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+BONUS_SRCS = $(addprefix $(SRC_DIR)/, $(BONUS_FILES))
+BONUS_OBJS = $(addprefix $(OBJ_DIR)/, $(BONUS_FILES:.c=.o))
 
 #_________________RULES_________________
 
@@ -84,8 +84,8 @@ $(NAME): $(OBJS)
 bonus: $(BONUS_OBJS)
 	@ar rcs $(NAME) $^
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJS) $(BONUS_OBJS)
