@@ -1,10 +1,15 @@
 <div align="center">
-  <img height="300" src="https://cdn.discordapp.com/attachments/783829038665433099/1278715942267912333/Black_And_White_Modern_Typographic_Simple_Virus_Apparel_Logo.png?ex=66d1d086&is=66d07f06&hm=0e4cd6f8bdc50f827700f8c1fea5d7aea327e525a3c8bc05dcb85c5acb8e5796&"  />
+  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/libft.png"  />
 </div>
 
 # Libft - Custom C Library
 
 Libft is a comprehensive custom library written in C, aimed at providing an extensive set of standard functions found in the C standard library, as well as some additional useful utilities. This project is often a foundational part of many C programming curricula, as it serves as a starting point for implementing and understanding core programming concepts in C.
+
+## Status
+<div align="center">
+  <img height="300" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/libft_succes.png"  />
+</div>
 
 ## Great resources
 
