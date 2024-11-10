@@ -8,7 +8,7 @@ Libft is a comprehensive custom library written in C, aimed at providing an exte
 
 ## Status
 <div align="center">
-  <img height="300" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/libft_succes.png"  />
+  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/libft_succes.png"  />
 </div>
 
 ## Great resources
