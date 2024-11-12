@@ -108,7 +108,6 @@ The library is organized into various sections, each focusing on different aspec
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstsize_bonus.c">ft_lstsize</a>: Count the number of elements in a linked list.</li>
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstlast_bonus.c">ft_lstlast</a>: Return the last element of a linked list.</li>
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstdelone_bonus.c">ft_lstdelone</a>: Delete an element from a linked list.</li>
-    <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstdel_bonus.c">ft_lstdel</a>: Delete an entire linked list.</li>
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstclear_bonus.c">ft_lstclear</a>: Delete all elements from a linked list and free the memory.</li>
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstiter_bonus.c">ft_lstiter</a>: Iterate through a linked list and apply a function to each element.</li>
     <li><a href="https://github.com/Benjamin-poisson/42-libft/blob/main/ft_lstmap_bonus.c">ft_lstmap</a>: Apply a function to each element of a linked list and create a new list with the results.</li>
